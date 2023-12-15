@@ -1,14 +1,14 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ReadQueryFile" this:ReadQueryFile.in_strFileName="C:\Users\55648C\Downloads\PJG_AO_VOUCHERS-28216452.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_strFileName" Type="InArgument(x:String)" />
-    <x:Property Name="out_dtQueryData" Type="OutArgument(sd:DataTable)" />
     <x:Property Name="out_strResult" Type="OutArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_dt_QueryData" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1856</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,2048</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadQueryFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -110,14 +110,15 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the data in the file and  extracts usable rows to process" DisplayName="ReadQueryFile" sap:VirtualizedContainerService.HintSize="648,1791" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the data in the file and  extracts usable rows to process" DisplayName="ReadQueryFile" sap:VirtualizedContainerService.HintSize="648,1983" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign out_strResult" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <ui:LogMessage DisplayName="Log Message Read File started" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading downloaded query file&quot;]" />
+    <Assign DisplayName="Assign out_strResult as blank" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
       </Assign.To>
@@ -139,12 +140,12 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange AddHeaders="True" DataTable="[out_dtQueryData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A2" SheetName="Sheet1" />
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[out_dt_QueryData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="388,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" Range="A2" SheetName="Sheet1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <If Condition="[out_dtQueryData.RowCount&gt;0]" DisplayName="If out_dtQueryData not null" sap:VirtualizedContainerService.HintSize="586,1206" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[out_dt_QueryData.RowCount&gt;0]" DisplayName="If out_dt_QueryData not null" sap:VirtualizedContainerService.HintSize="586,1036" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="552,854" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
@@ -160,7 +161,7 @@
               <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[out_dtQueryData.AsEnumerable.Where(Function(x) x("Voucher").ToString.Trim&lt;&gt;"")]</InArgument>
+              <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[out_dt_QueryData.AsEnumerable.Where(Function(x) x("Voucher").ToString.Trim&lt;&gt;"")]</InArgument>
             </Assign.Value>
           </Assign>
           <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If ienumFilteredData doesn't have rows after filter" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_3">
@@ -173,13 +174,13 @@
                 </sap:WorkflowViewStateService.ViewState>
                 <Assign DisplayName="Assign out_dtQueryData" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
-                    <OutArgument x:TypeArguments="sd:DataTable">[out_dtQueryData]</OutArgument>
+                    <OutArgument x:TypeArguments="sd:DataTable">[out_dt_QueryData]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
                     <InArgument x:TypeArguments="sd:DataTable">[ienumFilteredData.CopyToDataTable]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Assign out_strResult" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign DisplayName="Assign out_strResult: Rows Found" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
                   </Assign.To>
@@ -196,7 +197,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign out_strResult - No Rows found" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign DisplayName="Assign out_strResult - No Rows found after basic filter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
                   </Assign.To>
@@ -216,7 +217,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign out_strResult - No Rows found" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
@@ -227,5 +228,6 @@
         </Sequence>
       </If.Else>
     </If>
+    <ui:LogMessage DisplayName="Log Message Read File ended" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Successfully read downloaded query file&quot;]" />
   </Sequence>
 </Activity>

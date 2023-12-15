@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1613</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,1384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -121,19 +121,15 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1198,1548" sap2010:WorkflowViewState.IdRef="Sequence_9">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strUsername" />
-      <Variable x:TypeArguments="ss:SecureString" Name="secstrPassword" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="512,1319" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <Sequence DisplayName="Clear Downloads Folder" sap:VirtualizedContainerService.HintSize="1136,81" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Deletes old files in Download folder" DisplayName="Clear Downloads Folder" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arrFiles" />
       </Sequence.Variables>
@@ -141,6 +137,7 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Assign DisplayName="Assign arrFiles" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -151,7 +148,7 @@
           <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), "Downloads"))]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,354" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrFiles]">
+      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Array Files" sap:VirtualizedContainerService.HintSize="434,354" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrFiles]">
         <ui:ForEach.Body>
           <ActivityAction x:TypeArguments="x:String">
             <ActivityAction.Argument>
@@ -163,20 +160,22 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[currentItem]" />
+              <ui:DeleteFileX DisplayName="Delete file in Download folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[currentItem]" />
             </Sequence>
           </ActivityAction>
         </ui:ForEach.Body>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="1136,802" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <ui:LogMessage DisplayName="Log message Cleared Downloads folder" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloads folder cleared&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Creates the folder structure for&#xA;Manual Query&#xA;Bot query" DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="450,138" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="boolFolderExists" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <ui:FolderExistsX DisplayName="Folder Exists : Process Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="1074,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
@@ -188,14 +187,14 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
+            <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Process Name Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString)]" />
           </Sequence>
         </If.Then>
         <If.Else>
           <Sequence sap2010:WorkflowViewState.IdRef="Sequence_15" />
         </If.Else>
       </If>
-      <Parallel sap:VirtualizedContainerService.HintSize="1074,128" sap2010:WorkflowViewState.IdRef="Parallel_1">
+      <Parallel DisplayName="Parallel action for creating bot and query folder" sap:VirtualizedContainerService.HintSize="1074,128" sap2010:WorkflowViewState.IdRef="Parallel_1">
         <Sequence DisplayName="Create Bot Query Folders" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_44">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -204,7 +203,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:FolderExistsX DisplayName="Folder Exists : Bot Query Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_11" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;)]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Year boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_12">
+          <If Condition="[boolFolderExists=False]" DisplayName="If Bot Query Folder boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_12">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_36">
                 <sap:WorkflowViewStateService.ViewState>
@@ -212,15 +211,15 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_11" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;)]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Bot Query folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_11" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;)]" />
               </Sequence>
             </If.Then>
             <If.Else>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_37" />
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists : Year Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_12" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Year boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_13">
+          <ui:FolderExistsX DisplayName="Folder Exists : Year Bot Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_12" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
+          <If Condition="[boolFolderExists=False]" DisplayName="If Year Bot folder boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_13">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_38">
                 <sap:WorkflowViewStateService.ViewState>
@@ -228,14 +227,14 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_12" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Year Bot folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_12" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
               </Sequence>
             </If.Then>
             <If.Else>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_39" />
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists : Month Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_13" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
+          <ui:FolderExistsX DisplayName="Folder Exists : Month Bot folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_13" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
           <If Condition="[boolFolderExists=False]" DisplayName="If Month boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_14">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_40">
@@ -244,7 +243,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_13" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create folder for Month bot" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_13" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -260,7 +259,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Date Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_14" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;),DateTime.Now.ToString(&quot;dd&quot;))]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create folder for Date bot" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_14" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Bot Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;),DateTime.Now.ToString(&quot;dd&quot;))]" />
               </Sequence>
             </If.Then>
             <If.Else>
@@ -268,15 +267,15 @@
             </If.Else>
           </If>
         </Sequence>
-        <Sequence DisplayName="Create Manual Query Folders" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_28">
+        <Sequence DisplayName="Create Manual Query Folders" sap:VirtualizedContainerService.HintSize="472,2323" sap2010:WorkflowViewState.IdRef="Sequence_28">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:FolderExistsX DisplayName="Folder Exists : Bot Query Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_15" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;)]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Year boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_11">
+          <ui:FolderExistsX DisplayName="Folder Exists : Manual Query Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_15" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;)]" />
+          <If Condition="[boolFolderExists=False]" DisplayName="If Manual Query Folder boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_11">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_45">
                 <sap:WorkflowViewStateService.ViewState>
@@ -284,15 +283,15 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_15" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;)]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create for Manual query folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_15" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;)]" />
               </Sequence>
             </If.Then>
             <If.Else>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_46" />
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists : Year Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_5" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Year boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_6">
+          <ui:FolderExistsX DisplayName="Folder Exists : Year Manual Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_5" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
+          <If Condition="[boolFolderExists=False]" DisplayName="If Year Manual Folder boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_6">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_22">
                 <sap:WorkflowViewStateService.ViewState>
@@ -300,15 +299,15 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Year Manual folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_5" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, DateTime.Now.ToString(&quot;yyyy&quot;))]" />
               </Sequence>
             </If.Then>
             <If.Else>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23" />
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists : Month Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_6" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Month boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_7">
+          <ui:FolderExistsX DisplayName="Folder Exists : Month Manual Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_6" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
+          <If Condition="[boolFolderExists=False]" DisplayName="If Month Manual boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_7">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_24">
                 <sap:WorkflowViewStateService.ViewState>
@@ -316,15 +315,15 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
+                <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create folder for Month manual query" sap:VirtualizedContainerService.HintSize="334,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_6" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;))]" />
               </Sequence>
             </If.Then>
             <If.Else>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_25" />
             </If.Else>
           </If>
-          <ui:FolderExistsX DisplayName="Folder Exists : Date Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_7" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;),DateTime.Now.ToString(&quot;dd&quot;))]" />
-          <If Condition="[boolFolderExists=False]" DisplayName="If Date boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_8">
+          <ui:FolderExistsX DisplayName="Folder Exists : Date Manual Folder" Exists="[boolFolderExists]" sap:VirtualizedContainerService.HintSize="410,133" sap2010:WorkflowViewState.IdRef="FolderExistsX_7" Path="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), in_Config(&quot;logF_BusinessProcessName&quot;).ToString, &quot;Manual Query&quot;, DateTime.Now.ToString(&quot;yyyy&quot;),DateTime.Now.ToString(&quot;MMMM&quot;),DateTime.Now.ToString(&quot;dd&quot;))]" />
+          <If Condition="[boolFolderExists=False]" DisplayName="If Date Manual Folder boolFolderExists=False" sap:VirtualizedContainerService.HintSize="410,350" sap2010:WorkflowViewState.IdRef="If_8">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_26">
                 <sap:WorkflowViewStateService.ViewState>
@@ -342,16 +341,22 @@
         </Sequence>
       </Parallel>
     </Sequence>
-    <Sequence DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="1136,81" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <ui:LogMessage DisplayName="Log message Local folders created" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Local Working folders created&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Open browser and logs into Peoplesoft" DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="450,517" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ss:SecureString" Name="secstrPassword" />
+        <Variable x:TypeArguments="x:String" Name="strUsername" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PeoplesoftCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstrPassword]" Username="[strUsername]" />
-      <o:Peoplesoft_Login DisplayName="Peoplesoft Login" sap:VirtualizedContainerService.HintSize="388,192" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_1" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUsername="[strUsername]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PeoplesoftCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential for Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstrPassword]" Username="[strUsername]" />
+      <o:Peoplesoft_Login DisplayName="Log into Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,192" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_1" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUsername="[strUsername]" />
     </Sequence>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
+    <ui:LogMessage DisplayName="Log message (Initialized applications)" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
   </Sequence>
 </Activity>

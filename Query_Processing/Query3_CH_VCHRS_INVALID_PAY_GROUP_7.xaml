@@ -1,13 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="Query1_PJG_AO_Voucher" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="out_strResult" Type="InArgument(x:String)" />
-    <x:Property Name="io_QueryData" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="out_strResult" Type="OutArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="io_dt_QueryData" Type="InOutArgument(sd:DataTable)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1175</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,1467</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1110" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1402" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>
@@ -105,12 +105,12 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Start Query 3" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query3&quot;).ToString + &quot; query&quot;]" />
-    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xD;&#xA;Voucher is not empty&#xD;&#xA;&#xD;&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xD;&#xA;&#xD;&#xA;OR&#xD;&#xA;&#xD;&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Filter Data Table - Query 3 Filters" sap:VirtualizedContainerService.HintSize="510,245" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;&#xA;OR&#xA;&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Filter Data Table - Query 3 Filters" sap:VirtualizedContainerService.HintSize="510,245" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_QueryData
+        <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
 Where 	x("Unit").ToString.Trim.Equals("")=False And																																								'BU is not blank (Mandatory)
 			x("Voucher").ToString.Trim.Equals("")=False And																																							'Voucher is not blank (Mandatory)
 				(x("Class-Funding").ToString.Trim.StartsWith("7")=False And																																	'Class-Funding &lt;&gt; "7....." AND Account &lt;&gt; "7REG" or "7EFT" AND Pay Group &lt;&gt; "MO-FR" 
@@ -128,7 +128,7 @@ Select x]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[ienumFilteredData.Count&gt;0]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 3 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -136,9 +136,9 @@ Select x]</InArgument>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign in_QueryData - Distinct" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign Query 3 io_dt_QueryData - Distinct" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[io_QueryData]</OutArgument>
+              <OutArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="sd:DataTable">[ienumFilteredData.Distinct.CopyToDataTable]</InArgument>
@@ -153,7 +153,7 @@ Select x]</InArgument>
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign Query 3 Result to Progress_NoRowsFoundAfterFilter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
@@ -161,12 +161,12 @@ Select x]</InArgument>
               <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Assign in_QueryData - Distinct" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign DisplayName="Assign Query 3 dtQueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
-              <OutArgument x:TypeArguments="sd:DataTable">[io_QueryData]</OutArgument>
+              <OutArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="sd:DataTable">[io_QueryData.Clone]</InArgument>
+              <InArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData.Clone]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>
