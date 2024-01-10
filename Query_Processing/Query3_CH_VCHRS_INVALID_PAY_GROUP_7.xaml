@@ -93,9 +93,11 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 3 according to the following filters:&#xD;&#xA;BU and Voucher is not empty&#xA;Voucher is not empty&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;OR&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 3 according to the following filters:&#xA;BU and Voucher is not empty&#xA;Voucher is not empty&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;OR&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1504" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>

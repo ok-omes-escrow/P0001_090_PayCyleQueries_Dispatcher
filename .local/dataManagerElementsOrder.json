@@ -22,7 +22,14 @@
         "TransactionField1&StateMachine_1",
         "TransactionID&StateMachine_1",
         "ConsecutiveSystemExceptions&StateMachine_1",
-        "arrFIles&Sequence_35",
+        "dateProcessStartTime&State_2",
+        "dateProcessEndTime&State_2",
+        "dateMorningStartDate&Sequence_42",
+        "dateMorningEndDate&Sequence_42",
+        "dateNoonStartDate&Sequence_42",
+        "dateNoonEndDate&Sequence_42",
+        "dateEveningStartDate&Sequence_42",
+        "dateEveningEndDate&Sequence_42",
         "ShouldStop&Sequence_25"
       ],
       "ArgumentsSectionElementsOrder": [
@@ -139,6 +146,7 @@
       "Path": "Peoplesoft/GetQueriesFromProcessMonitor.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strURL&Sequence_1",
         "dt_ProcessList&Sequence_1",
         "intCounter&Sequence_1",
         "strFileName&Sequence_5"
@@ -195,9 +203,7 @@
       "Path": "Tests/WorkflowTestCaseTemplate.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Config&Sequence_1",
-        "Username&Sequence_2",
-        "Password&Sequence_2"
+        "Config&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -264,6 +270,7 @@
       "Path": "Tests/InitAllApplicationsTestCase.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strURL&Sequence_4",
         "Config&Sequence_1",
         "IsEnabled&Sequence_4"
       ],
@@ -272,13 +279,110 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Test.xaml",
+      "Path": "Misc/InitializeSharepointFolders.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "Result&Sequence_3",
-        "counter&Sequence_3"
+        "boolFolderFound&Sequence_2",
+        "boolManualFolderFound&Sequence_5",
+        "boolManualFolderCreated&Sequence_5",
+        "boolBotFolderFound&Sequence_6",
+        "boolBotFolderCreated&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/InitAllSettingsTestCase.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/MainTestCase.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "StatusFileName&Sequence_1",
+        "ExpectedDataFileName&Sequence_1",
+        "dt_ResultsData&Sequence_4",
+        "dt_ExpectedData&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/GetTransactionDataTestCase.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1",
+        "TransactionNumber&Sequence_1",
+        "TransactionItem&Sequence_1",
+        "VerificationOutput&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/GetTransactionData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_TransactionNumber",
+        "in_Config",
+        "out_TransactionItem",
+        "out_TransactionField1",
+        "out_TransactionField2",
+        "out_TransactionID"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Misc/UploadFilesToSharepoint.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolFileFound&Sequence_1",
+        "arrFiles&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_SharepointFolder",
+        "in_strParentFolderPath",
+        "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Tests/UploadFileTestCase.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "Config&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/AddItemsToQueue.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrFIles&Sequence_1",
+        "strDestinationPath&Sequence_2",
+        "QueueItems&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_dateProcessStartTime",
+        "in_dateProcessEndTime",
+        "in_Config"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
