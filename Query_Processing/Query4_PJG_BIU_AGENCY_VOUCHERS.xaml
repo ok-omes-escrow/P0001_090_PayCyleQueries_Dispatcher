@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1584</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>562,1584</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,9 +93,12 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 4 according to the following filters:&#xD;&#xA;BU and Voucher is not empty&#xD;&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Query4_PJG_BIU_AGENCY_VOUCHERS" sap:VirtualizedContainerService.HintSize="572,1519" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 4 according to the following filters:&#xA;BU and Voucher is not empty&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Query4_PJG_BIU_AGENCY_VOUCHERS" sap:VirtualizedContainerService.HintSize="572,1519" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
       <Variable x:TypeArguments="s:String[]" Default="[{&quot;KMILLARD&quot;,&quot;GVARGHESE02&quot;,&quot;MSTEVENS&quot;,&quot;JANDERSON04&quot;,&quot;ELANGDON&quot;}]" Name="arrTPStaff" />
@@ -157,7 +160,7 @@ Select x]</InArgument>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Assign Query 4 dt_QueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">

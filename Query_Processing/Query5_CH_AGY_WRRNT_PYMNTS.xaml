@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1569</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,1568</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -93,9 +93,11 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 5 according to the following filters:&#xD;&#xA;BU and Voucher is not empty&#xD;&#xA;1st 3 digits of BU &lt;&gt; last 3 digits of Supplier&#xA;Message doesn't contain &quot;Settlement&quot;&#xA;Message doesn't contain &quot;Set&quot;&#xA;Message doesn't contain &quot;Paper Check&quot;&#xA;Invoice ID doesn't contain &quot;Correction&quot;&#xA;Invoice doesn't contain &quot;/CORR&quot;" DisplayName="Query5_CH_AGY_WRRNT_PYMNTS" sap:VirtualizedContainerService.HintSize="572,1504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 5 according to the following filters:&#xA;BU and Voucher is not empty&#xA;1st 3 digits of BU &lt;&gt; last 3 digits of Supplier ID&#xA;Message doesn't contain &quot;Settlement&quot;&#xA;Message doesn't contain &quot;Set&quot;&#xA;Message doesn't contain &quot;Paper Check&quot;&#xA;Invoice ID doesn't contain &quot;Correction&quot;&#xA;Invoice doesn't contain &quot;/CORR&quot;" DisplayName="Query5_CH_AGY_WRRNT_PYMNTS" sap:VirtualizedContainerService.HintSize="572,1503" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>
@@ -106,15 +108,15 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Start Query 5" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query5&quot;).ToString + &quot; query&quot;]" />
-    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;1st 3 digits of BU &lt;&gt; last 3 digits of Supplier&#xA;Message doesn't contain &quot;Settlement&quot;&#xA;Message doesn't contain &quot;Set&quot;&#xA;Message doesn't contain &quot;Paper Check&quot;&#xA;Invoice ID doesn't contain &quot;Correction&quot;&#xA;Invoice doesn't contain &quot;/CORR&quot;" DisplayName="Filter Data Table - Query 5 Filter" sap:VirtualizedContainerService.HintSize="510,215" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;1st 3 digits of BU &lt;&gt; last 3 digits of Supplier&#xA;Message doesn't contain &quot;Settlement&quot;&#xA;Message doesn't contain &quot;Set&quot;&#xA;Message doesn't contain &quot;Paper Check&quot;&#xA;Invoice ID doesn't contain &quot;Correction&quot;&#xA;Invoice doesn't contain &quot;/CORR&quot;" DisplayName="Filter Data Table - Query 5 Filter" sap:VirtualizedContainerService.HintSize="510,217" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
+        <InArgument x:TypeArguments="sd:EnumerableRowCollection(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
 Where x("BU").ToString.Trim.Equals("")=False And																																																								'BU not blank (Mandatory)
 			x("Voucher").ToString.Trim.Equals("")=False And																																																						'Voucher not blank (Mandatory)
-			x("BU").ToString.ToLower.Trim.Substring(0,3).Equals(x("Supplier").ToString.ToLower.Trim.Substring(x("Supplier").ToString.ToLower.Trim.Length-3,3)) And													'1st 3 digits of BU column &lt;&gt; last 3 digits of Supplier column
+			x("BU").ToString.ToLower.Trim.Substring(0,3).Equals(x("Supplier ID").ToString.ToLower.Trim.Substring(x("Supplier ID").ToString.ToLower.Trim.Length-3,3)) And													'1st 3 digits of BU column &lt;&gt; last 3 digits of Supplier column
 			x("Message").ToString.ToLower.Trim.Equals("settlements")=False And																																													'Field doesn't contain "Settlements"
 			x("Message").ToString.ToLower.Trim.Equals("set")=False And																																																	'Field doesn't contain "Set"
 			x("Message").ToString.ToLower.Trim.Equals("paper check")=False And																																													'Field doesn't contain "Paper Check"
@@ -128,15 +130,15 @@ Select x]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 5 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 5 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,641" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign Query 5 io_dt_QueryData - Distinct" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign Query 5 io_dt_QueryData - Distinct" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData]</OutArgument>
             </Assign.To>
@@ -147,21 +149,21 @@ Select x]</InArgument>
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,290" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign Query 5 Result to Progress_NoRowsFoundAfterFilter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign Query 5 Result to Progress_NoRowsFoundAfterFilter" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Assign Query 5 io_dt_QueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign DisplayName="Assign Query 5 io_dt_QueryData as null" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData]</OutArgument>
             </Assign.To>

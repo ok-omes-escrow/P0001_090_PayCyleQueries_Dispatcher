@@ -114,7 +114,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
-Where 	x("Unit").ToString.Trim.Equals("")=False And																																								'BU is not blank (Mandatory)
+Where 	x("BU").ToString.Trim.Equals("")=False And																																								'BU is not blank (Mandatory)
 			x("Voucher").ToString.Trim.Equals("")=False And																																							'Voucher is not blank (Mandatory)
 				(x("Class-Funding").ToString.Trim.StartsWith("7")=False And																																	'Class-Funding &lt;&gt; "7....." AND Account &lt;&gt; "7REG" or "7EFT" AND Pay Group &lt;&gt; "MO-FR" 
 				x("Account").ToString.ToLower.Trim.Equals("7reg")=False And
@@ -161,7 +161,7 @@ Select x]</InArgument>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
           <Assign DisplayName="Assign Query 3 dtQueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">

@@ -93,9 +93,10 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 1 according to the following filters:&#xD;&#xA;BU and Voucher is not empty&#xD;&#xA;On Hold is &quot;Y&quot;" DisplayName="Query1_PJG_AO_Voucher" sap:VirtualizedContainerService.HintSize="572,1354" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 1 according to the following filters:&#xA;BU and Voucher is not empty&#xA;On Hold is &quot;Y&quot;" DisplayName="Query1_PJG_AO_Voucher" sap:VirtualizedContainerService.HintSize="572,1354" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>
@@ -161,7 +162,7 @@ Select x]</InArgument>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>

@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,2048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,2214</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadQueryFile_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,9 +108,10 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the data in the file and  extracts usable rows to process" DisplayName="ReadQueryFile" sap:VirtualizedContainerService.HintSize="648,1983" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow reads the data in the file and  extracts usable rows to process" DisplayName="ReadQueryFile" sap:VirtualizedContainerService.HintSize="648,2149" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -118,7 +119,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Read File started" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading downloaded query file&quot;]" />
-    <Assign DisplayName="Assign out_strResult as blank" sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign DisplayName="Assign out_strResult as blank" sap:VirtualizedContainerService.HintSize="586,81" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
       </Assign.To>
@@ -145,9 +146,9 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <If Condition="[out_dt_QueryData.RowCount&gt;0]" DisplayName="If out_dt_QueryData not null" sap:VirtualizedContainerService.HintSize="586,1036" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[out_dt_QueryData.RowCount&gt;0]" DisplayName="If out_dt_QueryData not null" sap:VirtualizedContainerService.HintSize="586,1203" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="552,854" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="552,851" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
           </Sequence.Variables>
@@ -156,7 +157,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign ienumFilteredData" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign DisplayName="Assign ienumFilteredData" sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
             </Assign.To>
@@ -164,15 +165,15 @@
               <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[out_dt_QueryData.AsEnumerable.Where(Function(x) x("Voucher").ToString.Trim&lt;&gt;"")]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If ienumFilteredData doesn't have rows after filter" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_3">
+          <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If ienumFilteredData doesn't have rows after filter" sap:VirtualizedContainerService.HintSize="510,642" sap2010:WorkflowViewState.IdRef="If_3">
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,292" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,291" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign out_dtQueryData" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign DisplayName="Assign out_dtQueryData" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_5">
                   <Assign.To>
                     <OutArgument x:TypeArguments="sd:DataTable">[out_dt_QueryData]</OutArgument>
                   </Assign.To>
@@ -180,29 +181,31 @@
                     <InArgument x:TypeArguments="sd:DataTable">[ienumFilteredData.CopyToDataTable]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <Assign DisplayName="Assign out_strResult: Rows Found" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                <Assign DisplayName="Assign out_strResult - No Rows found after basic filter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("Progress_RowsFound").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
                   </Assign.Value>
                 </Assign>
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_8">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign DisplayName="Assign out_strResult - No Rows found after basic filter" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign DisplayName="Assign out_strResult - No Rows found after basic filter" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
                   </Assign.To>
                   <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFound").ToString]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
                   </Assign.Value>
                 </Assign>
               </Sequence>
@@ -222,7 +225,7 @@
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFound").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_3"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
         </Sequence>

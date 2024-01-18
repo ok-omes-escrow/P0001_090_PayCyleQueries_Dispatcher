@@ -5,17 +5,17 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1188,2699</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,2084</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>GlobalConstantsNamespace</x:String>
       <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>LIB_PeopleSoft_9_2</x:String>
       <x:String>Microsoft.Graph</x:String>
       <x:String>Microsoft.VisualBasic</x:String>
       <x:String>Microsoft.VisualBasic.Activities</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
-      <x:String>OMES_Peoplesoft_Activities</x:String>
       <x:String>System</x:String>
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -72,11 +72,11 @@
       <x:String>UiPath.UIAutomationNext.Exceptions</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Triggers</x:String>
-      <x:String>LIB_PeopleSoft_9_2</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>LIB_PeopleSoft_9.2</AssemblyReference>
       <AssemblyReference>Microsoft.Graph</AssemblyReference>
       <AssemblyReference>Microsoft.Graph.Core</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
@@ -84,7 +84,6 @@
       <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
       <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>OMES Peoplesoft Activities</AssemblyReference>
       <AssemblyReference>PresentationCore</AssemblyReference>
       <AssemblyReference>PresentationFramework</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
@@ -143,24 +142,24 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
       <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>LIB_PeopleSoft_9.2</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1198,2474" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="512,1979" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Deletes old files in Download folder" DisplayName="Clear Downloads Folder" sap:VirtualizedContainerService.HintSize="1136,618" sap2010:WorkflowViewState.IdRef="Sequence_11">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Deletes old files in Download folder" DisplayName="Clear Downloads Folder" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_11">
       <Sequence.Variables>
         <Variable x:TypeArguments="s:String[]" Name="arrFiles" />
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
@@ -191,8 +190,8 @@
         </ui:ForEach.Body>
       </ui:ForEach>
     </Sequence>
-    <ui:LogMessage DisplayName="Log message Cleared Downloads folder" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloads folder cleared&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Creates the folder structure for&#xA;Manual Query&#xA;Bot query" DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="1136,138" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <ui:LogMessage DisplayName="Log message Cleared Downloads folder" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloads folder cleared&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Creates the folder structure for&#xA;Manual Query&#xA;Bot query" DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="450,138" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="boolFolderExists" />
       </Sequence.Variables>
@@ -366,13 +365,13 @@
         </Sequence>
       </Parallel>
     </Sequence>
-    <ui:LogMessage DisplayName="Log message Local folders created" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Local Working folders created&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Misc\InitializeSharepointFolders.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1136,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Misc\InitializeSharepointFolders.xaml">
+    <ui:LogMessage DisplayName="Log message Local folders created" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Local Working folders created&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Misc\InitializeSharepointFolders.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Misc\InitializeSharepointFolders.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InOutArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="io_Config">[in_Config]</InOutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence sap2010:Annotation.AnnotationText="Open browser and logs into Peoplesoft" DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="1136,619" sap2010:WorkflowViewState.IdRef="Sequence_10">
+    <Sequence sap2010:Annotation.AnnotationText="Open browser and logs into Peoplesoft" DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="450,619" sap2010:WorkflowViewState.IdRef="Sequence_10">
       <Sequence.Variables>
         <Variable x:TypeArguments="ss:SecureString" Name="secstrPassword" />
         <Variable x:TypeArguments="x:String" Name="strUsername" />
@@ -384,9 +383,9 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PeoplesoftCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential for Peoplesoft app" FolderPath="[in_Config(&quot;Environment&quot;).ToString]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstrPassword]" Username="[strUsername]" />
-      <l:Peoplesoft_Login DisplayName="Log into Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,294" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_2" in_strLoginException="The automation failed to log in to the application" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUserIDTextboxException="The automation was unable to identify the UserID text box" in_strUsername="[strUsername]" />
+      <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PeoplesoftCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential for Peoplesoft app" FolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstrPassword]" Username="[strUsername]" />
+      <l:Peoplesoft_Login DisplayName="Log into Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,294" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_2" in_strLoginException="[DirectCast(in_Config(&quot;SE_2&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUserIDTextboxException="[DirectCast(in_Config(&quot;SE_1&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strUsername="[strUsername]" />
     </Sequence>
-    <ui:LogMessage DisplayName="Log message (Initialized applications)" sap:VirtualizedContainerService.HintSize="1136,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
+    <ui:LogMessage DisplayName="Log message (Initialized applications)" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
   </Sequence>
 </Activity>

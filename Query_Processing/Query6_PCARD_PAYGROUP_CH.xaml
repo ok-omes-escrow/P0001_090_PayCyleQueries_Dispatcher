@@ -94,9 +94,11 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 6 according to the following filters:&#xD;&#xA;BU is not empty&#xA;Voucher is not empty" DisplayName="Query6_PCARD_PAYGROUP_CH" sap:VirtualizedContainerService.HintSize="572,1339" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 6 according to the following filters:&#xA;BU is not empty&#xA;Voucher is not empty" DisplayName="Query6_PCARD_PAYGROUP_CH" sap:VirtualizedContainerService.HintSize="572,1339" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>
@@ -113,7 +115,7 @@
       </Assign.To>
       <Assign.Value>
         <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
-Where x("Unit").ToString.Trim.Equals("")=False And
+Where x("BU").ToString.Trim.Equals("")=False And
 			x("Voucher").ToString.Trim.Equals("")=False 
 Select x]</InArgument>
       </Assign.Value>
@@ -153,10 +155,10 @@ Select x]</InArgument>
               <OutArgument x:TypeArguments="x:String">[out_strResult]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Progress_NoRowsFoundAfterFilter").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[DirectCast(in_Config("BE_4"),System.Data.DataRow)("Exception Details").ToString]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="Assign Query 5 io_dt_QueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
+          <Assign DisplayName="Assign Query 6 io_dt_QueryData as null" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_12">
             <Assign.To>
               <OutArgument x:TypeArguments="sd:DataTable">[io_dt_QueryData]</OutArgument>
             </Assign.To>
