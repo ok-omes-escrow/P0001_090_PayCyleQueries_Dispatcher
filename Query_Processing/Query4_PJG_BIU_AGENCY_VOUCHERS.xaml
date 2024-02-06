@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,1584</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,1415</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -98,10 +98,10 @@
       <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 4 according to the following filters:&#xA;BU and Voucher is not empty&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Query4_PJG_BIU_AGENCY_VOUCHERS" sap:VirtualizedContainerService.HintSize="572,1519" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 4 according to the following filters:&#xA;BU and Voucher is not empty&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Query4_PJG_BIU_AGENCY_VOUCHERS" sap:VirtualizedContainerService.HintSize="572,1350" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
-      <Variable x:TypeArguments="s:String[]" Default="[{&quot;KMILLARD&quot;,&quot;GVARGHESE02&quot;,&quot;MSTEVENS&quot;,&quot;JANDERSON04&quot;,&quot;ELANGDON&quot;}]" Name="arrTPStaff" />
+      <Variable x:TypeArguments="s:String[]" Name="arrTPStaff" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -109,8 +109,16 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start Query 4" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query4&quot;).ToString + &quot; query&quot;]" />
-    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Filter Data Table - Query 4 Filter" sap:VirtualizedContainerService.HintSize="510,230" sap2010:WorkflowViewState.IdRef="Assign_5">
+    <ui:LogMessage DisplayName="Log Message Start Query 4" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query4Name&quot;).ToString + &quot; query&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="510,81" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:String[]">[arrTPStaff]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:String[]">[in_Config("TPStaff").ToString.Split(",")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;TP staff not included&#xA;Origin is &quot;BIU&quot; and EFT Layout is &quot;FUNDTRNFR&quot;&#xA;OR&#xA;Origin = &quot;ONL&quot; and EFT Layout = &quot;IUP&quot; and Gross Amt &lt;&gt; 0 or -ve&#xA;OR&#xA;Budget Status = &quot;V&quot; and Account is &quot;519130&quot; and Invoice ID doesn't start with EB" DisplayName="Filter Data Table - Query 4 Filter" sap:VirtualizedContainerService.HintSize="510,232" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
       </Assign.To>
@@ -130,7 +138,7 @@ Select x]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 4 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 4 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -174,6 +182,6 @@ Select x]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message End Query 4" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query4&quot;).ToString + &quot; query&quot;]" />
+    <ui:LogMessage DisplayName="Log Message End Query 4" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query4Name&quot;).ToString + &quot; query&quot;]" />
   </Sequence>
 </Activity>

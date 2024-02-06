@@ -1,13 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SendEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_O365MailActivities_00_00;assembly=LIB_O365MailActivities_00.00" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SendEmail" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_strEmailTemplateID" Type="InArgument(x:String)" />
     <x:Property Name="in_listAttachmentFilePath" Type="InArgument(scg:List(x:String))" />
+    <x:Property Name="in_strExceptionDetails" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1645</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,1995</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -50,6 +51,7 @@
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.Platform.ResourceHandling</x:String>
       <x:String>System.Xml.Serialization</x:String>
+      <x:String>LIB_GraphAPI</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -120,9 +122,10 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>LIB_GraphAPI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="485,1540" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="485,1930" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrBusinessEmailID" />
       <Variable x:TypeArguments="s:String[]" Name="arrBotControllerEmailID" />
@@ -137,7 +140,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Starting Send Email Workflow...&quot;]" />
-    <If Condition="[in_Config is Nothing]" DisplayName="If Config is empty" sap:VirtualizedContainerService.HintSize="423,182" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[in_Config is Nothing]" DisplayName="If Config is empty" sap:VirtualizedContainerService.HintSize="423,541" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="376,359" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -153,7 +156,7 @@
         <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
       </If.Else>
     </If>
-    <ui:MultipleAssign DisplayName="Multiple Assign - Email Inputs" sap:VirtualizedContainerService.HintSize="423,256" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+    <ui:MultipleAssign DisplayName="Multiple Assign - Email Inputs" sap:VirtualizedContainerService.HintSize="423,287" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
       <ui:MultipleAssign.AssignOperations>
         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
@@ -193,7 +196,7 @@
               <OutArgument x:TypeArguments="x:String">[strSubject]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Subject").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Subject").ToString.Replace("{Process Name}",in_Config("logF_BusinessProcessName").ToString)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -201,20 +204,21 @@
               <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Body").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Body").ToString.Replace("{Date}",now.ToString("MM-dd-yyyy")).Replace("{Link}",in_Config("SharepointURL").ToString &amp; "/" &amp; in_Config("SharepointSubFolder").ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[strBody.Replace("{Exception Details}",in_strExceptionDetails)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <l:Send_Email ApplicationID_Asset_Name="[in_Config(&quot;AppID&quot;).ToString]" Application_Secret_Asset_Name="[in_Config(&quot;AppSecret&quot;).ToString]" Attachment_List="[in_listAttachmentFilePath]" CC_Email_Account="[arrBotControllerEmailID]" DisplayName="Send SE Email" From_Email_Account="[in_Config(&quot;BotEmailID&quot;).ToString]" sap:VirtualizedContainerService.HintSize="423,549" sap2010:WorkflowViewState.IdRef="Send_Email_2" Mail_Body="[strBody]" Mail_Subject="[strSubject]" Orchestrator_Folder_Path="[in_Config(&quot;AssetFolder&quot;).ToString]" TenantID_Asset_Name="[in_Config(&quot;TenantID&quot;).ToString]" To_Email_Account="[arrBusinessEmailID]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </l:Send_Email>
+    <l:Send_Email DisplayName="Send Email to recipient" sap:VirtualizedContainerService.HintSize="423,549" sap2010:WorkflowViewState.IdRef="Send_Email_3" in_listOfAttachment="[in_listAttachmentFilePath]" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strFromEmailAccount="[in_Config(&quot;BotEmailID&quot;).ToString]" in_strMailBody="[strBody]" in_strMailRecipientCC="[arrBotControllerEmailID]" in_strMailRecipientTo="[arrBusinessEmailID]" in_strMailSubject="[strSubject]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="423,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End Send Email Workflow.&quot;]" />
   </Sequence>
 </Activity>

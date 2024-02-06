@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="UploadFilesToSharepoint" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_O365_Sharepoint_00_00;assembly=LIB_O365_Sharepoint_00.00" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="UploadFilesToSharepoint" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="in_strParentFolderPath" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,2160</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,3065</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UploadFilesToSharepoint_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -59,6 +59,7 @@
       <x:String>UiPath.MicrosoftOffice365.Mail.Enums</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Filters</x:String>
       <x:String>UiPath.MicrosoftOffice365.Activities.Files.Enums</x:String>
+      <x:String>LIB_GraphAPI</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -129,9 +130,10 @@
       <AssemblyReference>System.IO.Packaging</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>LIB_GraphAPI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="661,2095" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UploadFilesToSharepoint" sap:VirtualizedContainerService.HintSize="813,3000" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="s:String[]" Name="arrFiles" />
       <Variable x:TypeArguments="x:Boolean" Name="boolFileFound" />
@@ -141,8 +143,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message - Start Sharepoint Upload" sap:VirtualizedContainerService.HintSize="599,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Starting file upload to Sharepoint...&quot;]" />
-    <Assign DisplayName="Assign arrFiles" sap:VirtualizedContainerService.HintSize="599,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:LogMessage DisplayName="Log Message - Start Sharepoint Upload" sap:VirtualizedContainerService.HintSize="751,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Starting file upload to Sharepoint...&quot;]" />
+    <Assign DisplayName="Assign arrFiles" sap:VirtualizedContainerService.HintSize="751,82" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[arrFiles]</OutArgument>
       </Assign.To>
@@ -150,25 +152,25 @@
         <InArgument x:TypeArguments="s:String[]">[system.IO.Directory.GetFiles(in_strParentFolderPath)]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:IfElseIf DisplayName="Else If Folder is Bot or Manual" sap:VirtualizedContainerService.HintSize="599,1500" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+    <ui:IfElseIf DisplayName="Else If Folder is Bot or Manual" sap:VirtualizedContainerService.HintSize="751,2405" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
       <ui:IfElseIf.ConditionBlocks>
         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
           <ui:IfElseIfBlock BlockType="If" Condition="[in_SharepointFolder.Contains(in_Config(&quot;BotFolderName&quot;).ToString) and arrFiles.Count&gt;0]">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Upload all files to Bot Sharepoint folder" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Upload all files to Bot Sharepoint folder" sap:VirtualizedContainerService.HintSize="472,983" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Bot files" sap:VirtualizedContainerService.HintSize="410,640" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrFiles]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Bot files" sap:VirtualizedContainerService.HintSize="410,872" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrFiles]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="filepath" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Upload all files" sap:VirtualizedContainerService.HintSize="376,454" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence DisplayName="Upload all files" sap:VirtualizedContainerService.HintSize="376,686" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,7 +184,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Bot File Exist" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_2" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strSharepointFileFolderToSearch="[path.GetFileName(filepath)]" in_strSharepointSubfolder="[in_Config(&quot;SharepointBotFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFileFound]">
+                        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Bot File for upload Exist" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_3" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[path.GetFileName(filepath)]" in_strSharepointSubfolder="[in_Config(&quot;SharepointBotFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFileFound]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,7 +192,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </l:Files_or_Folders_Exist>
-                        <If Condition="[boolFileFound=false]" DisplayName="If file is found in Bot folder" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If Condition="[boolFileFound=false]" DisplayName="If file is found in Bot folder" sap:VirtualizedContainerService.HintSize="334,414" sap2010:WorkflowViewState.IdRef="If_3">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="300,232" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
@@ -198,7 +200,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <l:Upload_File out_boolFileUploaded="{x:Null}" DisplayName="Upload File to Sharepoint Bot folder" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="Upload_File_1" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_Config(&quot;SharepointBotFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[filepath]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]">
+                              <l:Upload_File out_boolFileUploaded="{x:Null}" DisplayName="Upload File to Sharepoint Bot folder" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="Upload_File_3" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_Config(&quot;SharepointBotFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[filepath]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -243,26 +245,26 @@
           </ui:IfElseIfBlock>
           <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_SharepointFolder.Contains(in_Config(&quot;ManualFolderName&quot;).ToString) and arrFiles.Count&gt;0]">
             <ui:IfElseIfBlock.Then>
-              <Sequence DisplayName="Upload all files to Manual Sharepoint folder" sap:VirtualizedContainerService.HintSize="548,980" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Upload all files to Manual Sharepoint folder" sap:VirtualizedContainerService.HintSize="472,983" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Manual files" sap:VirtualizedContainerService.HintSize="486,869" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrFiles]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Manual files" sap:VirtualizedContainerService.HintSize="410,872" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrFiles]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="filepath" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,683" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,686" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message - Uploading to Manual folder" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Uploading &quot; &amp; Path.GetFileName(filepath) &amp; &quot; to &quot; &amp; in_SharepointFolder &amp; &quot; folder&quot;]">
+                        <ui:LogMessage DisplayName="Log Message - Uploading to Manual folder" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Uploading &quot; &amp; Path.GetFileName(filepath) &amp; &quot; to &quot; &amp; in_SharepointFolder &amp; &quot; folder&quot;]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -270,7 +272,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:LogMessage>
-                        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Manual Files Exist" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_1" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strSharepointFileFolderToSearch="[path.GetFileName(filepath)]" in_strSharepointSubfolder="[in_Config(&quot;SharepointManualFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFileFound]">
+                        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Bot File Exist" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_4" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[path.GetFileName(filepath)]" in_strSharepointSubfolder="[in_Config(&quot;SharepointManualFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFileFound]">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -278,7 +280,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </l:Files_or_Folders_Exist>
-                        <If Condition="[boolFileFound=false]" DisplayName="If file is found in Manual folder" sap:VirtualizedContainerService.HintSize="410,411" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[boolFileFound=false]" DisplayName="If file is found in Manual folder" sap:VirtualizedContainerService.HintSize="334,414" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="300,232" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
@@ -286,7 +288,7 @@
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <l:Upload_File out_boolFileUploaded="{x:Null}" DisplayName="Upload File to Sharepoint Manual folder" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="Upload_File_2" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_Config(&quot;SharepointManualFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[filepath]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]">
+                              <l:Upload_File out_boolFileUploaded="{x:Null}" DisplayName="Upload File to Sharepoint Manual folder" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="Upload_File_4" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[in_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointParentFolderPath="[in_Config(&quot;SharepointManualFolderPath&quot;).ToString]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSharepointUploadFilePath="[filepath]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -352,6 +354,6 @@
         </sc:BindingList>
       </ui:IfElseIf.ConditionBlocks>
     </ui:IfElseIf>
-    <ui:LogMessage DisplayName="Log Message - End Sharepoint Upload" sap:VirtualizedContainerService.HintSize="599,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Files uploaded to Sharepoint...&quot;]" />
+    <ui:LogMessage DisplayName="Log Message - End Sharepoint Upload" sap:VirtualizedContainerService.HintSize="751,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Files uploaded to Sharepoint...&quot;]" />
   </Sequence>
 </Activity>

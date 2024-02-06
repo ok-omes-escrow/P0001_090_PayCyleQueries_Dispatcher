@@ -106,7 +106,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start Query 1" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query1&quot;).ToString + &quot; query&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Start Query 1" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query1Name&quot;).ToString + &quot; query&quot;]" />
     <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher ID is not empty&#xA;On Hold is not Y" DisplayName="Filter Data Table - Query 1 Filters" sap:VirtualizedContainerService.HintSize="510,140" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
@@ -168,6 +168,6 @@ Select x]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message End Query 1" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query1&quot;).ToString + &quot; query&quot;]" />
+    <ui:LogMessage DisplayName="Log Message End Query 1" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query1Name&quot;).ToString + &quot; query&quot;]" />
   </Sequence>
 </Activity>

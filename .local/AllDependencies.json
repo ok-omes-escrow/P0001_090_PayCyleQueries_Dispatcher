@@ -107,15 +107,15 @@
           }
         }
       },
-      "LIB_O365MailActivities_00.00/1.0.3": {
+      "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
         "type": "package",
         "dependencies": {
-          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.3",
+          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.2",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
+      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -125,55 +125,29 @@
           "lib/net6.0-windows7.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
+          "lib/net6.0-windows7.0/LIB_GraphAPI.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll": {}
         }
       },
-      "LIB_O365_Sharepoint_00.00/1.0.2": {
+      "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
         "type": "package",
         "dependencies": {
-          "UiPath.MicrosoftOffice365.Activities": "2.4.3",
-          "UiPath.System.Activities": "23.4.5"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_2425794.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_46372851.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_52064999.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_5822459.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_59597698.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_8705547.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
-      "LIB_PeopleSoft_9.2/1.0.1-alpha.33": {
-        "type": "package",
-        "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.33",
+          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.38",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
         }
       },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.33": {
+      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -184,13 +158,12 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_23611763.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40703736.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42604054.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_4471641.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5822459.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_58682072.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_66732486.dll": {}
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -5368,15 +5341,15 @@
           }
         }
       },
-      "LIB_O365MailActivities_00.00/1.0.3": {
+      "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
         "type": "package",
         "dependencies": {
-          "LIB_O365MailActivities_00.00.Library.Runtime": "1.0.3",
+          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.2",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
+      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -5386,55 +5359,29 @@
           "lib/net6.0-windows7.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
+          "lib/net6.0-windows7.0/LIB_GraphAPI.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll": {}
         }
       },
-      "LIB_O365_Sharepoint_00.00/1.0.2": {
+      "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
         "type": "package",
         "dependencies": {
-          "UiPath.MicrosoftOffice365.Activities": "2.4.3",
-          "UiPath.System.Activities": "23.4.5"
-        },
-        "compile": {
-          "lib/net6.0-windows7.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_2425794.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_46372851.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_52064999.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_5822459.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_59597698.dll": {},
-          "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_8705547.dll": {}
-        },
-        "contentFiles": {
-          "contentFiles/any/any/_._": {
-            "buildAction": "None",
-            "codeLanguage": "any",
-            "copyToOutput": false
-          }
-        }
-      },
-      "LIB_PeopleSoft_9.2/1.0.1-alpha.33": {
-        "type": "package",
-        "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.33",
+          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.38",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
         }
       },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.33": {
+      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -5445,13 +5392,12 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_23611763.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40703736.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42604054.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_4471641.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5822459.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_58682072.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_66732486.dll": {}
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -10500,113 +10446,63 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
-    "LIB_O365MailActivities_00.00/1.0.3": {
-      "sha512": "6U9rMqwQC/Q4zO5LTQ9S+pgJUqHXDb/mHzzP3SHACPUfryuTLkYns5ioHc5S6X+oLP/cQWVzyFnibXcvXxY2dw==",
+    "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
+      "sha512": "LB0+rIP7osk50NBmG/7x1rNyFn42Lh8nm6NGFOZzGvlU3vjKmUfYCNlvScEze2Pb8Rjfl8I37C0j2fxHb5OSXA==",
       "type": "package",
-      "path": "lib_o365mailactivities_00.00/1.0.3",
+      "path": "lib_graphapi_1.0/1.0.1-alpha.2",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
         "content/.project/design.json",
-        "content/.settings/Design/settings-5190454b.json",
-        "content/.settings/Design/settings-a1b2dac1.json",
-        "content/.settings/Design/settings-afad0842.json",
-        "content/.settings/Release/settings-1a5b880a.json",
-        "content/.settings/Release/settings-5190454b.json",
-        "content/.settings/Release/settings-590bb27b.json",
-        "content/.settings/Release/settings-82ca306a.json",
         "content/.settings/Release/settings-9e9290da.json",
-        "content/.settings/Release/settings-a1b2dac1.json",
-        "content/.settings/Release/settings-afad0842.json",
+        "content/Create Folder.xaml",
+        "content/Download File.xaml",
+        "content/Files or Folders Exist.xaml",
+        "content/Get Files or Folders.xaml",
+        "content/Get List Item Field Value.xaml",
         "content/GetO365Assets.xaml",
-        "content/GetO365Assets.xaml.json",
         "content/Read Email.xaml",
-        "content/Read Email.xaml.json",
         "content/Runtime.Mapping.json",
         "content/Send Email.xaml",
-        "content/Send Email.xaml.json",
         "content/Test.xaml",
-        "content/bindings.json",
-        "content/bindings_v2.json",
-        "content/project.json",
-        "lib_o365mailactivities_00.00.1.0.3.nupkg.sha512",
-        "lib_o365mailactivities_00.00.nuspec"
-      ]
-    },
-    "LIB_O365MailActivities_00.00.Library.Runtime/1.0.3": {
-      "sha512": "KqZmDwZTF3BMu61a+P7qlxGSTs9XFarH0VGX0xpNAbKl+rlLQDpNiynf2neDHreMVq8GLjZ8z9LLPfPp+lWWVA==",
-      "type": "package",
-      "path": "lib_o365mailactivities_00.00.library.runtime/1.0.3",
-      "files": [
-        ".nupkg.metadata",
-        "content/.settings/Release/settings-1a5b880a.json",
-        "content/.settings/Release/settings-5190454b.json",
-        "content/.settings/Release/settings-590bb27b.json",
-        "content/.settings/Release/settings-82ca306a.json",
-        "content/.settings/Release/settings-9e9290da.json",
-        "content/.settings/Release/settings-a1b2dac1.json",
-        "content/.settings/Release/settings-afad0842.json",
-        "content/bindings.json",
-        "content/bindings_v2.json",
-        "contentFiles/any/any/.objects/.metadata",
-        "contentFiles/any/any/.objects/.type",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_13055966.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_19042642.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_2007359.dll",
-        "lib/net6.0-windows7.0/LIB_O365MailActivities_00.00_Expressions_52064999.dll",
-        "lib_o365mailactivities_00.00.library.runtime.1.0.3.nupkg.sha512",
-        "lib_o365mailactivities_00.00.library.runtime.nuspec"
-      ]
-    },
-    "LIB_O365_Sharepoint_00.00/1.0.2": {
-      "sha512": "GiL15WKDuWKnvzQeo/Y7TYnCA2hsm+6bWRDeXfnPEb3hnmrYbaUsMEGPpAtsXXnjLWehYb1tbjSaHzyYjSTohw==",
-      "type": "package",
-      "path": "lib_o365_sharepoint_00.00/1.0.2",
-      "files": [
-        ".nupkg.metadata",
-        "content/.project/PackageBindingsMetadata.json",
-        "content/.project/design.json",
-        "content/.settings/Design/settings-5190454b.json",
-        "content/.settings/Design/settings-a1b2dac1.json",
-        "content/.settings/Design/settings-afad0842.json",
-        "content/.settings/Release/settings-1a5b880a.json",
-        "content/.settings/Release/settings-5190454b.json",
-        "content/.settings/Release/settings-590bb27b.json",
-        "content/.settings/Release/settings-82ca306a.json",
-        "content/.settings/Release/settings-9e9290da.json",
-        "content/.settings/Release/settings-a1b2dac1.json",
-        "content/.settings/Release/settings-afad0842.json",
-        "content/Create Folder.xaml",
-        "content/Create Folder.xaml.json",
-        "content/Files or Folders Exist.xaml",
-        "content/Files or Folders Exist.xaml.json",
-        "content/Get Files or Folders.xaml",
-        "content/Get Files or Folders.xaml.json",
-        "content/GetO365Assets.xaml",
-        "content/Test.xaml",
+        "content/Update List Item.xaml",
         "content/Upload File.xaml",
-        "content/Upload File.xaml.json",
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "contentFiles/any/any/.objects/.metadata",
-        "contentFiles/any/any/.objects/.type",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_2425794.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_46372851.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_52064999.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_5822459.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_59597698.dll",
-        "lib/net6.0-windows7.0/LIB_O365_Sharepoint_00.00_Expressions_8705547.dll",
-        "lib_o365_sharepoint_00.00.1.0.2.nupkg.sha512",
-        "lib_o365_sharepoint_00.00.nuspec"
+        "lib_graphapi_1.0.1.0.1-alpha.2.nupkg.sha512",
+        "lib_graphapi_1.0.nuspec"
       ]
     },
-    "LIB_PeopleSoft_9.2/1.0.1-alpha.33": {
-      "sha512": "0GfVtmMRdeT4L+JdF/uEW4o3WSjNMtg07FDgywpwlRKlgtYRTGKopmcDAzzDQ1my3Fn3kuTwwcfjFJjMY3FpAg==",
+    "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
+      "sha512": "8lJYVo7j1kdPGVp0cgKDJ/AtP/woMt08ha2Jg0895aDsfgw+Co5GRON+tUQkyJgE5848ntyPjnrUG9kENcrGDQ==",
       "type": "package",
-      "path": "lib_peoplesoft_9.2/1.0.1-alpha.33",
+      "path": "lib_graphapi_1.0.library.runtime/1.0.1-alpha.2",
+      "files": [
+        ".nupkg.metadata",
+        "content/.settings/Release/settings-9e9290da.json",
+        "content/bindings.json",
+        "content/bindings_v2.json",
+        "lib/net6.0-windows7.0/LIB_GraphAPI.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll",
+        "lib_graphapi_1.0.library.runtime.1.0.1-alpha.2.nupkg.sha512",
+        "lib_graphapi_1.0.library.runtime.nuspec"
+      ]
+    },
+    "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
+      "sha512": "C+IfHAcNOboI90E5DMIG7CcQ5A4Hcbrc/X2QeJVSfrYnHz1GTdQp1l9RJ5J1h3jF4a/g3EavGejXMhUo67kNHw==",
+      "type": "package",
+      "path": "lib_peoplesoft_9.2/1.0.1-alpha.38",
       "files": [
         ".nupkg.metadata",
         "Oracle symbol.PNG",
@@ -10634,18 +10530,17 @@
         "content/Refresh Process Monitor.xaml",
         "content/Refresh Process Monitor.xaml.json",
         "content/Runtime.Mapping.json",
-        "content/Test.xaml",
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "lib_peoplesoft_9.2.1.0.1-alpha.33.nupkg.sha512",
+        "lib_peoplesoft_9.2.1.0.1-alpha.38.nupkg.sha512",
         "lib_peoplesoft_9.2.nuspec"
       ]
     },
-    "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.33": {
-      "sha512": "KcFtfhK+2JQYVYC4vVdlOrrVNu+RRERUgDZS827mKEQqYpyU22nakhxWginIJPpr64uQbUrv58AYT+AVSi1JGg==",
+    "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
+      "sha512": "3+iumuEnXMnteTbcs0WPAj8WBXvGqV1SXVwHQjxFhBFYCdj7PjsTaySHSVp3gYG72Swu7jKtXG/WwbpuSj5rKQ==",
       "type": "package",
-      "path": "lib_peoplesoft_9.2.library.runtime/1.0.1-alpha.33",
+      "path": "lib_peoplesoft_9.2.library.runtime/1.0.1-alpha.38",
       "files": [
         ".nupkg.metadata",
         "content/.package/Oracle symbol.PNG",
@@ -10664,17 +10559,16 @@
         "contentFiles/any/any/.objects/-CBe/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/.type",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.attributes/DesignData",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.images/.design/0_H8PyiX9oUOiE2BbVLOruA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.images/.design/0MY_NI3yjRkykFHyN4g7Vlg",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.images/.design/0Tv_tDCXOCkWbW9onBark0A",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.images/.design/0U6N7RxwT4EC6DJzUZ_2cFg",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -10693,12 +10587,6 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/.data/ObjectRepositoryTargetData/.images/.design/08eQG3IMTGk-nuvMcc9wcbA",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/.type",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.data/ObjectRepositoryTargetData/.content",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.data/ObjectRepositoryTargetData/.images/.design/04eKN3uEJz02wIg-BxTtKUg",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.metadata",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/TQeb/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/aa7I/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/aa7I/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/aa7I/.data/ObjectRepositoryTargetData/.hash",
@@ -10719,7 +10607,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.data/ObjectRepositoryTargetData/.images/.design/0kgnDgBcHxEGolLPNx2tDLA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.data/ObjectRepositoryTargetData/.images/.design/0czBcgdzUNUuoui0rEkt7IA",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/78Zg/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/7EiX/.data/ExtractMetadata/.content",
@@ -10802,12 +10690,19 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.data/ObjectRepositoryTargetData/.images/.design/0C4VUS9eVqUGg18lOzu3WMw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.data/ObjectRepositoryTargetData/.images/.design/0D4yJ-HIE5EO4reQYL27F1Q",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.data/ObjectRepositoryTargetData/.images/.design/0scRaGcZNYkeedstGjk_dxw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/pREy/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.data/ObjectRepositoryTargetData/.images/.design/0pPa4UhY1FUOxX7wDah5Rkw",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
@@ -11062,43 +10957,41 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.data/ObjectRepositoryTargetData/.images/.design/01s0SJRgtz0GRb6UuENuWKA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.data/ObjectRepositoryTargetData/.images/.design/0oDGFjFfmM0i_63caPr4lSw",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.data/ObjectRepositoryTargetData/.images/.design/0u9wqHmnZFkuM975VI3xHzg",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.data/ObjectRepositoryTargetData/.images/.design/01td54grud0eCUC3LgAxZNA",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.data/ObjectRepositoryTargetData/.images/.design/0gex3n4aqvUmsBz2eekVLXQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.data/ObjectRepositoryTargetData/.images/.design/0dccOVi_U-keR2iQraUi_uA",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.images/.design/04m2xAUT_W0O51CWmvAr1yQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.images/.design/0JukvsoAaIkyVkJYnBAjPJg",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.images/.design/0JhOQvTb5nUaLEPpDyGs-Ng",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.images/.design/01wHsvIyVNkCgP3FVk2pV0Q",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.data/ObjectRepositoryTargetData/.images/.design/0KEnsnqVLlUq0Ub0pNs9nEQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.data/ObjectRepositoryTargetData/.images/.design/0vHgXJykJZ0Kd2c3tU_zAqA",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/DySn/Irjp/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -11121,19 +11014,19 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.data/ObjectRepositoryTargetData/.images/.design/0jMTNbOW_TUy_c1oynzicQg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.data/ObjectRepositoryTargetData/.images/.design/0DXajiJWFSEeIiojMFZOZfQ",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.data/ObjectRepositoryTargetData/.images/.design/0BqxeL1g5LUSZ3cmNbB7daA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.data/ObjectRepositoryTargetData/.images/.design/0nTVhhO6vqU2rSIqzCgvgvQ",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.data/ObjectRepositoryTargetData/.images/.design/0w8or52KzU0ymuFvN3xrjew",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.data/ObjectRepositoryTargetData/.images/.design/0WO_qQEbLB0m0FwLNUcFNWg",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/uT3y/r1XLl/HfwYA/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
@@ -11175,7 +11068,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.data/ObjectRepositoryTargetData/.images/.design/0WHgZPYzUFESDCGsbC9FVPQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.data/ObjectRepositoryTargetData/.images/.design/0aIQ2k6-gDkmEX8-MQ3zxiA",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/PBhd/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/W57N/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -11211,7 +11104,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.data/ObjectRepositoryTargetData/.images/.design/06QzWQgOrS02kmRboCYyQcQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.data/ObjectRepositoryTargetData/.images/.design/0_Zwjrv_i00yGV1-iVrDswQ",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/moSI/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/noEJ/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -11275,14 +11168,13 @@
         "contentFiles/any/any/.objects/.metadata",
         "contentFiles/any/any/.objects/.type",
         "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_23611763.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40703736.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42604054.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_4471641.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5822459.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_58682072.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_66732486.dll",
-        "lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.33.nupkg.sha512",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll",
+        "lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.38.nupkg.sha512",
         "lib_peoplesoft_9.2.library.runtime.nuspec"
       ]
     },
@@ -21253,9 +21145,8 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "LIB_O365MailActivities_00.00 >= 1.0.3 <= 1.0.3",
-      "LIB_O365_Sharepoint_00.00 >= 1.0.2 <= 1.0.2",
-      "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.33 <= 1.0.1-alpha.33",
+      "LIB_GraphAPI_1.0 >= 1.0.1-alpha.2 <= 1.0.1-alpha.2",
+      "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.38 <= 1.0.1-alpha.38",
       "UiPath.Excel.Activities >= 2.20.2 <= 2.20.2",
       "UiPath.System.Activities >= 23.4.5 <= 23.4.5",
       "UiPath.Testing.Activities >= 23.4.1 <= 23.4.1",
@@ -21276,20 +21167,15 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "dependencies": {
-          "LIB_O365MailActivities_00.00": {
+          "LIB_GraphAPI_1.0": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.3, 1.0.3]"
-          },
-          "LIB_O365_Sharepoint_00.00": {
-            "include": "Runtime",
-            "target": "Package",
-            "version": "[1.0.2, 1.0.2]"
+            "version": "[1.0.1-alpha.2, 1.0.1-alpha.2]"
           },
           "LIB_PeopleSoft_9.2": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.1-alpha.33, 1.0.1-alpha.33]"
+            "version": "[1.0.1-alpha.38, 1.0.1-alpha.38]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",

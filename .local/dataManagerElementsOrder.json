@@ -12,6 +12,9 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dateProcessStartTime&StateMachine_1",
+        "dateProcessEndTime&StateMachine_1",
+        "dt_FilteredProcessList&Sequence_4",
         "strScreenshotFilePath&Sequence_51",
         "TransactionItem&StateMachine_1",
         "SystemException&StateMachine_1",
@@ -23,8 +26,6 @@
         "TransactionField1&StateMachine_1",
         "TransactionID&StateMachine_1",
         "ConsecutiveSystemExceptions&StateMachine_1",
-        "dateProcessStartTime&State_2",
-        "dateProcessEndTime&State_2",
         "dateMorningStartDate&Sequence_42",
         "dateMorningEndDate&Sequence_42",
         "dateNoonStartDate&Sequence_42",
@@ -131,6 +132,8 @@
       "Path": "Framework/InitAllSettings.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_Assets&Sequence_14",
+        "dt_EmailTemplate&Sequence_14",
         "dt_SettingsAndConstants&Sequence_5",
         "dt_Assets&Sequence_6",
         "AssetValue&Sequence_11"
@@ -147,12 +150,23 @@
       "Path": "Peoplesoft/GetQueriesFromProcessMonitor.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strRunControlID&Sequence_11",
+        "strDestinationPath&Sequence_14",
+        "strReportID&Sequence_11",
+        "strQueryDescription&Sequence_11",
+        "boolValidDate&Sequence_3",
+        "datetimeProcessInstanceTime&Sequence_5",
+        "strDateFormat&Sequence_5",
+        "strProcessInstanceDate&Sequence_5",
         "strURL&Sequence_1",
         "dt_ProcessList&Sequence_1",
         "intCounter&Sequence_1",
         "strFileName&Sequence_5"
       ],
       "ArgumentsSectionElementsOrder": [
+        "out_dt_FilteredProcessInstance",
+        "in_datetimeProcessEndTime",
+        "in_datetimeProcessStartTime",
         "in_Config"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -375,14 +389,46 @@
       "Path": "Framework/AddItemsToQueue.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "arrFIles&Sequence_1",
-        "strDestinationPath&Sequence_2",
-        "QueueItems&Sequence_2"
+        "strDestinationBotPath&Sequence_1",
+        "strSourcePath&Sequence_14",
+        "strDestinationManualPath&Sequence_14",
+        "QueueItems&Sequence_1",
+        "strDestinationPath&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
+        "in_dt_ProcessList",
         "in_dateProcessStartTime",
         "in_dateProcessEndTime",
         "in_Config"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "queueitems&Sequence_1",
+        "screenshot&Sequence_1",
+        "result&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "CreateSummaryReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSummaryFilePath&Sequence_1",
+        "QueueItems&Sequence_1",
+        "dt_Summary&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_TemplateFIlePath",
+        "in_Config",
+        "in_datetimeStartTime",
+        "in_datetimeEndTime"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

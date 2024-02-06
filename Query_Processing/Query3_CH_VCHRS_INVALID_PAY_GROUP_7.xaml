@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1488,1569</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,1277</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -97,7 +97,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 3 according to the following filters:&#xA;BU and Voucher is not empty&#xA;Voucher is not empty&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;OR&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1504" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="This workflow filters the contents of Query 3 according to the following filters:&#xA;BU and Voucher is not empty&#xA;Voucher is not empty&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;OR&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Query3_CH_VCHRS_INVALID_PAY_GROUP_7" sap:VirtualizedContainerService.HintSize="572,1212" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(sd:DataRow)" Name="ienumFilteredData" />
     </Sequence.Variables>
@@ -107,7 +107,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start Query 3" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query3&quot;).ToString + &quot; query&quot;]" />
+    <ui:LogMessage DisplayName="Log Message Start Query 3" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Executing &quot; + in_Config(&quot;Query3Name&quot;).ToString + &quot; query&quot;]" />
     <Assign sap2010:Annotation.AnnotationText="BU is not empty&#xA;Voucher is not empty&#xA;&#xA;'Class-Funding not start with&quot;7.....&quot; AND Account &lt;&gt; &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;MO-FR&quot; &#xA;&#xA;OR&#xA;&#xA;'Class-Funding starts with &quot;7.....&quot; AND Account = &quot;7REG&quot; or &quot;7EFT&quot; AND Pay Group &lt;&gt; &quot;7F&quot; " DisplayName="Filter Data Table - Query 3 Filters" sap:VirtualizedContainerService.HintSize="510,245" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
@@ -131,7 +131,7 @@ Select x]</InArgument>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 3 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,644" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[ienumFilteredData.Count&gt;0]" DisplayName="If Query 3 ienumFilteredData.Count&gt;0" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -175,6 +175,6 @@ Select x]</InArgument>
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message End Query 3" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query3&quot;).ToString + &quot; query&quot;]" />
+    <ui:LogMessage DisplayName="Log Message End Query 3" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Execution ended for  &quot; + in_Config(&quot;Query3Name&quot;).ToString + &quot; query&quot;]" />
   </Sequence>
 </Activity>
