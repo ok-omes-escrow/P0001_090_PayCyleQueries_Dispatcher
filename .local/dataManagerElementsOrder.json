@@ -12,6 +12,16 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strScreenshotFilePath&Sequence_26",
+        "drExceptionRow&Sequence_81",
+        "drExceptionRow&Sequence_79",
+        "drExceptionRow&Sequence_77",
+        "drExceptionRow&Sequence_75",
+        "drExceptionRow&Sequence_73",
+        "drExceptionRow&Sequence_71",
+        "drExceptionRow&Sequence_69",
+        "drExceptionRow&Sequence_67",
+        "drExceptionRow&Sequence_65",
         "dateProcessStartTime&StateMachine_1",
         "dateProcessEndTime&StateMachine_1",
         "dt_FilteredProcessList&Sequence_4",
@@ -59,6 +69,20 @@
       "Path": "Framework/Process.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "drExceptionRow&Sequence_57",
+        "drExceptionRow&Sequence_55",
+        "drExceptionRow&Sequence_53",
+        "drExceptionRow&Sequence_51",
+        "drExceptionRow&Sequence_49",
+        "drExceptionRow&Sequence_47",
+        "drExceptionRow&Sequence_40",
+        "drExceptionRow&Sequence_39",
+        "drExceptionRow&Sequence_38",
+        "drExceptionRow&Sequence_37",
+        "drExceptionRow&Sequence_36",
+        "drExceptionRow&Sequence_34",
+        "strAttachmentFound&Sequence_1",
+        "strQueryType&Sequence_1",
         "dt_QueryData&Sequence_1",
         "strQueryFilePath&Sequence_1",
         "strQueryName&Sequence_1",
@@ -117,6 +141,11 @@
       "Path": "Framework/InitAllApplications.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "drExceptionRow&Sequence_62",
+        "drExceptionRow&Sequence_59",
+        "drExceptionRow&Sequence_56",
+        "drExceptionRow&Sequence_50",
+        "intValue&Sequence_11",
         "strUsername&Sequence_10",
         "secstrPassword&Sequence_10",
         "boolFolderExists&Sequence_13",
@@ -150,6 +179,8 @@
       "Path": "Peoplesoft/GetQueriesFromProcessMonitor.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "drExceptionRow&Sequence_18",
+        "drExceptionRow&Sequence_16",
         "strRunControlID&Sequence_11",
         "strDestinationPath&Sequence_14",
         "strReportID&Sequence_11",
@@ -297,6 +328,8 @@
       "Path": "Misc/InitializeSharepointFolders.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strRootFolderName&Sequence_2",
+        "strRootFolderPath&Sequence_2",
         "boolFolderFound&Sequence_2",
         "boolManualFolderFound&Sequence_5",
         "boolManualFolderCreated&Sequence_5",
@@ -429,6 +462,26 @@
         "in_Config",
         "in_datetimeStartTime",
         "in_datetimeEndTime"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Framework/SendEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "arrBusinessEmailID&Sequence_1",
+        "arrBotControllerEmailID&Sequence_1",
+        "drEmailTemplate&Sequence_1",
+        "strSubject&Sequence_1",
+        "strBody&Sequence_1",
+        "strBotEmailID&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strExceptionDetails",
+        "in_Config",
+        "in_strEmailTemplateID",
+        "in_listAttachmentFilePath"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

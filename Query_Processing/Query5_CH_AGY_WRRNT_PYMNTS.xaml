@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>562,1277</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,1317</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Query1_PJG_AO_Voucher_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -113,10 +113,10 @@
         <OutArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)">[ienumFilteredData]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="sd:EnumerableRowCollection(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
+        <InArgument x:TypeArguments="scg:IEnumerable(sd:DataRow)" xml:space="preserve">[From x As DataRow In io_dt_QueryData
 Where x("BU").ToString.Trim.Equals("")=False And																																																								'BU not blank (Mandatory)
 			x("Voucher").ToString.Trim.Equals("")=False And																																																						'Voucher not blank (Mandatory)
-			x("BU").ToString.ToLower.Trim.Substring(0,3).Equals(x("Supplier ID").ToString.ToLower.Trim.Substring(x("Supplier ID").ToString.ToLower.Trim.Length-3,3)) And													'1st 3 digits of BU column &lt;&gt; last 3 digits of Supplier column
+			x("BU").ToString.ToLower.Trim.Substring(0,3).Equals(x("Supplier ID").ToString.ToLower.Trim.Substring(x("Supplier ID").ToString.ToLower.Trim.Length-3,3))=False And								'1st 3 digits of BU column &lt;&gt; last 3 digits of Supplier column
 			x("Message").ToString.ToLower.Trim.Equals("settlements")=False And																																													'Field doesn't contain "Settlements"
 			x("Message").ToString.ToLower.Trim.Equals("set")=False And																																																	'Field doesn't contain "Set"
 			x("Message").ToString.ToLower.Trim.Equals("paper check")=False And																																													'Field doesn't contain "Paper Check"
