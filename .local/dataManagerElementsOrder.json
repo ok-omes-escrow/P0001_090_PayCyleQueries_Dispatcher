@@ -126,8 +126,7 @@
       "Path": "Query_Processing/Query5_CH_AGY_WRRNT_PYMNTS.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "ienumFilteredData&Sequence_1",
-        "arrTPStaff&Sequence_1"
+        "ienumFilteredData&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [
         "io_dt_QueryData",
