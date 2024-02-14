@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,6538</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,6408</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetQueriesFromProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,7 +131,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetQueriesFromProcessMonitor" sap:VirtualizedContainerService.HintSize="820,6473" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetQueriesFromProcessMonitor" sap:VirtualizedContainerService.HintSize="820,6303" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessList" />
       <Variable x:TypeArguments="x:Int32" Name="intCounter" />
@@ -190,7 +190,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If Condition="[CINT(Now.DayOfWeek)=1]" DisplayName="If Monday" sap:VirtualizedContainerService.HintSize="758,521" sap2010:WorkflowViewState.IdRef="If_9">
+    <If Condition="[CINT(Now.DayOfWeek)=1]" DisplayName="If Monday" sap:VirtualizedContainerService.HintSize="758,351" sap2010:WorkflowViewState.IdRef="If_9">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
@@ -283,7 +283,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NExtractData ExtractDataSettings="{x:Null}" AppendResults="False" ContinueOnError="True" DataTable="[dt_ProcessList]" DisplayName="Extract Table Data 'Process List Table'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Select' attr='fulltext' /&gt;&lt;column name='Instance' attr='fulltext' /&gt;&lt;column name='Seq.' attr='fulltext' /&gt;&lt;column name='Process Type' attr='fulltext' /&gt;&lt;column name='Process Name' attr='fulltext' name2='Process Name Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Src' attr2='src' name3='Column-5 Alt Text' attr3='alt' name4='Column-5 Url' attr4='href' /&gt;&lt;column name='User' attr='fulltext' /&gt;&lt;column name='Run Date/Time' attr='fulltext' /&gt;&lt;column name='Run Status' attr='fulltext' /&gt;&lt;column name='Distribution Status' attr='fulltext' /&gt;&lt;column name='Details' attr='fulltext' name2='Details Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f1638430-f11b-4450-b3ae-de9ae42e0534" Timeout="5" Version="V3">
+            <uix:NExtractData ExtractDataSettings="{x:Null}" AppendResults="False" ContinueOnError="True" DataTable="[dt_ProcessList]" DisplayName="Extract Table Data 'Process List Table'" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Select' attr='fulltext' /&gt;&lt;column name='Instance' attr='fulltext' /&gt;&lt;column name='Seq.' attr='fulltext' /&gt;&lt;column name='Process Type' attr='fulltext' /&gt;&lt;column name='Process Name' attr='fulltext' name2='Process Name Url' attr2='href' /&gt;&lt;column name='Column-5' attr='fulltext' name2='Column-5 Src' attr2='src' name3='Column-5 Alt Text' attr3='alt' name4='Column-5 Url' attr4='href' /&gt;&lt;column name='User' attr='fulltext' /&gt;&lt;column name='Run Date/Time' attr='fulltext' /&gt;&lt;column name='Run Status' attr='fulltext' /&gt;&lt;column name='Distribution Status' attr='fulltext' /&gt;&lt;column name='Details' attr='fulltext' name2='Details Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" InteractionMode="DebuggerApi" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="f1638430-f11b-4450-b3ae-de9ae42e0534" Timeout="5" Version="V3">
               <uix:NExtractData.NextLink>
                 <uix:TargetAnchorable Accuracy="0.9" BrowserURL="https://soklf-tst.opc.oracleoutsourcing.com/psc/SOKLFTSTNSS/EMPLOYEE/ERP/c/PROCESSMONITOR.PROCESSMONITOR.GBL?PortalActualURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentURL=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2fEMPLOYEE%2fERP%2fc%2fPROCESSMONITOR.PROCESSMONITOR.GBL&amp;PortalContentProvider=ERP&amp;PortalCRefLabel=Process%20Monitor&amp;PortalRegistryName=EMPLOYEE&amp;PortalServletURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsp%2fSOKLFTSTNSS%2f&amp;PortalURI=https%3a%2f%2fsoklf-tst.opc.oracleoutsourcing.com%2fpsc%2fSOKLFTSTNSS%2f&amp;PortalHostNode=ERP&amp;NoCrumbs=yes&amp;PortalKeyStruct=yes" DesignTimeRectangle="1342, 455, 33, 31" DesignTimeScaleFactor="1" FriendlyName="'A PMN_PRCSLIST$hdown$0'" FullSelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_PRCSLIST$hdown$0' tag='A' aaname='Show next row' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ptifrmtgtframe' tag='IFRAME' /&gt;&lt;webctrl id='PMN_PRCSLIST$hdown$0' tag='A' aaname='Show next row' type='' class='PTCPGRIDHDRNEXTDIVACN' /&gt;" Guid="f9d1d595-8976-4058-bbe5-51bd28fe18c1" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACUAAAAjCAYAAAATx8MeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC7SURBVFhH7dQxCsQgEIXhPWiOkkYCYpUqpEpp6TlyJBWRzCLMASb6Akt2fhiI0eJr9EM/mKKkKUqaoqQpSto7Ud57uq6LV5iGUdM00b7vUBgE1WZdV6q18t+xYKg21loqpfBOf1BUm2VZKOfMu33BUW3meaYYI5+43yOoNg3W2/+gjDGUUuIT94OjnHPDNxCK2rYN8lbBUMdxwF51CCqEwCtMw6jzPPkL1zDqiRQlTVHSFCVNUdIUJYvoC6APxiGHjGUZAAAAAElFTkSuQmCC" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Process Monitor' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
