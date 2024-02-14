@@ -440,6 +440,8 @@
       "Path": "Test.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "config&Sequence_1",
+        "dt_Data&Sequence_1",
         "queueitems&Sequence_1",
         "screenshot&Sequence_1",
         "result&Sequence_1"

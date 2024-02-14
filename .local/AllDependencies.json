@@ -107,15 +107,15 @@
           }
         }
       },
-      "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
+      "LIB_GraphAPI_1.0/1.0.1-alpha.4": {
         "type": "package",
         "dependencies": {
-          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.2",
+          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.4",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
+      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.4": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -126,28 +126,30 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_GraphAPI.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll": {}
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_1221028.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_14108343.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_2482522.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25181126.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25278038.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_26065692.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_35305391.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3610582.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_44601817.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_47291546.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_52157273.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_53360743.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_5506821.dll": {}
         }
       },
-      "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
+      "LIB_PeopleSoft_9.2/1.0.1-alpha.39": {
         "type": "package",
         "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.38",
+          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.39",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
         }
       },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
+      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.39": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -158,12 +160,13 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll": {}
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_24058510.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25181126.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47056750.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_55799963.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_61820044.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_7652101.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_830383.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -5341,15 +5344,15 @@
           }
         }
       },
-      "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
+      "LIB_GraphAPI_1.0/1.0.1-alpha.4": {
         "type": "package",
         "dependencies": {
-          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.2",
+          "LIB_GraphAPI_1.0.Library.Runtime": "1.0.1-alpha.4",
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
           "UiPath.System.Activities": "23.4.5"
         }
       },
-      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
+      "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.4": {
         "type": "package",
         "dependencies": {
           "UiPath.MicrosoftOffice365.Activities": "2.4.3",
@@ -5360,28 +5363,30 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_GraphAPI.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll": {},
-          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll": {}
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_1221028.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_14108343.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_2482522.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25181126.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25278038.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_26065692.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_35305391.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3610582.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_44601817.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_47291546.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_52157273.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_53360743.dll": {},
+          "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_5506821.dll": {}
         }
       },
-      "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
+      "LIB_PeopleSoft_9.2/1.0.1-alpha.39": {
         "type": "package",
         "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.38",
+          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.1-alpha.39",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
         }
       },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
+      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.39": {
         "type": "package",
         "dependencies": {
           "UiPath.System.Runtime.Windows": "23.4.5",
@@ -5392,12 +5397,13 @@
         },
         "runtime": {
           "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll": {}
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_24058510.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25181126.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47056750.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_55799963.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_61820044.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_7652101.dll": {},
+          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_830383.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -10446,21 +10452,24 @@
         "lib/netstandard2.0/ExcelNumberFormat.xml"
       ]
     },
-    "LIB_GraphAPI_1.0/1.0.1-alpha.2": {
-      "sha512": "LB0+rIP7osk50NBmG/7x1rNyFn42Lh8nm6NGFOZzGvlU3vjKmUfYCNlvScEze2Pb8Rjfl8I37C0j2fxHb5OSXA==",
+    "LIB_GraphAPI_1.0/1.0.1-alpha.4": {
+      "sha512": "lP393gECPJwc2u1tQu/lDXZbslbOUvZMJpMlECz+6zUDqWVHPmqfBuARSvclW0es3FNoZUVtcMzdlmrZKexj4Q==",
       "type": "package",
-      "path": "lib_graphapi_1.0/1.0.1-alpha.2",
+      "path": "lib_graphapi_1.0/1.0.1-alpha.4",
       "files": [
         ".nupkg.metadata",
         "content/.project/PackageBindingsMetadata.json",
         "content/.project/design.json",
         "content/.settings/Release/settings-9e9290da.json",
         "content/Create Folder.xaml",
+        "content/Delete File.xaml",
         "content/Download File.xaml",
         "content/Files or Folders Exist.xaml",
         "content/Get Files or Folders.xaml",
         "content/Get List Item Field Value.xaml",
+        "content/Get List Items.xaml",
         "content/GetO365Assets.xaml",
+        "content/README.md",
         "content/Read Email.xaml",
         "content/Runtime.Mapping.json",
         "content/Send Email.xaml",
@@ -10470,39 +10479,42 @@
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "lib_graphapi_1.0.1.0.1-alpha.2.nupkg.sha512",
+        "lib_graphapi_1.0.1.0.1-alpha.4.nupkg.sha512",
         "lib_graphapi_1.0.nuspec"
       ]
     },
-    "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.2": {
-      "sha512": "8lJYVo7j1kdPGVp0cgKDJ/AtP/woMt08ha2Jg0895aDsfgw+Co5GRON+tUQkyJgE5848ntyPjnrUG9kENcrGDQ==",
+    "LIB_GraphAPI_1.0.Library.Runtime/1.0.1-alpha.4": {
+      "sha512": "8iYPGe4lEWlbsIfsv1SiGKuXpiGdsIrUCpCnINGLGqcIH7gVBaYgk1jjGvit9StgDUcMBdFofS+qwfKwghG3pg==",
       "type": "package",
-      "path": "lib_graphapi_1.0.library.runtime/1.0.1-alpha.2",
+      "path": "lib_graphapi_1.0.library.runtime/1.0.1-alpha.4",
       "files": [
         ".nupkg.metadata",
         "content/.settings/Release/settings-9e9290da.json",
+        "content/README.md",
         "content/bindings.json",
         "content/bindings_v2.json",
         "lib/net6.0-windows7.0/LIB_GraphAPI.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_11756974.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_17896505.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_24514942.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3099634.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_32834096.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_34737395.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_41566787.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_42604054.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_64415691.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_7894961.dll",
-        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_8963119.dll",
-        "lib_graphapi_1.0.library.runtime.1.0.1-alpha.2.nupkg.sha512",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_1221028.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_14108343.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_2482522.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25181126.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_25278038.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_26065692.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_35305391.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_3610582.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_44601817.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_47291546.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_52157273.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_53360743.dll",
+        "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_5506821.dll",
+        "lib_graphapi_1.0.library.runtime.1.0.1-alpha.4.nupkg.sha512",
         "lib_graphapi_1.0.library.runtime.nuspec"
       ]
     },
-    "LIB_PeopleSoft_9.2/1.0.1-alpha.38": {
-      "sha512": "C+IfHAcNOboI90E5DMIG7CcQ5A4Hcbrc/X2QeJVSfrYnHz1GTdQp1l9RJ5J1h3jF4a/g3EavGejXMhUo67kNHw==",
+    "LIB_PeopleSoft_9.2/1.0.1-alpha.39": {
+      "sha512": "b+NNrpRSgFfT/PuJ0oJmZ+i0vw1Cs6cQUxyP3YqtH+2fdTpXiMi8khZp+oxU+MsWkq5pOon6tacUfiWdZVrcRQ==",
       "type": "package",
-      "path": "lib_peoplesoft_9.2/1.0.1-alpha.38",
+      "path": "lib_peoplesoft_9.2/1.0.1-alpha.39",
       "files": [
         ".nupkg.metadata",
         "Oracle symbol.PNG",
@@ -10527,20 +10539,22 @@
         "content/Peoplesoft Login.xaml",
         "content/Peoplesoft Login.xaml.json",
         "content/README.md",
+        "content/Refresh Process Monitor - Date Range.xaml",
+        "content/Refresh Process Monitor - Date Range.xaml.json",
         "content/Refresh Process Monitor.xaml",
         "content/Refresh Process Monitor.xaml.json",
         "content/Runtime.Mapping.json",
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "lib_peoplesoft_9.2.1.0.1-alpha.38.nupkg.sha512",
+        "lib_peoplesoft_9.2.1.0.1-alpha.39.nupkg.sha512",
         "lib_peoplesoft_9.2.nuspec"
       ]
     },
-    "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.38": {
-      "sha512": "3+iumuEnXMnteTbcs0WPAj8WBXvGqV1SXVwHQjxFhBFYCdj7PjsTaySHSVp3gYG72Swu7jKtXG/WwbpuSj5rKQ==",
+    "LIB_PeopleSoft_9.2.Library.Runtime/1.0.1-alpha.39": {
+      "sha512": "bfewXmjCOdWPGfy+tHVyGNQU2v0IHd1D93ehsXePeZNrQ9wSb8TF1ta2FhJvGtSqLtg4raAUpjuR/+46+5bsyA==",
       "type": "package",
-      "path": "lib_peoplesoft_9.2.library.runtime/1.0.1-alpha.38",
+      "path": "lib_peoplesoft_9.2.library.runtime/1.0.1-alpha.39",
       "files": [
         ".nupkg.metadata",
         "content/.package/Oracle symbol.PNG",
@@ -10562,7 +10576,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.hash",
-        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.images/.design/0MY_NI3yjRkykFHyN4g7Vlg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.data/ObjectRepositoryTargetData/.images/.design/0MDGDd29tpUCDZJxsWkEIbA",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/-vkL/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
@@ -10579,6 +10593,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.data/ObjectRepositoryTargetData/.images/.design/0OB1LthCjBEajXMQydaiFFw",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/4jhQ/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -10625,6 +10640,12 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/A2f7/.data/ObjectRepositoryTargetData/.images/.design/0NGTShKl3bUuYzPJrBY2hKQ",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/A2f7/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/A2f7/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.data/ObjectRepositoryTargetData/.images/.design/0IW3S0BxiI06PlHTVFhtMfA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/BQ3q/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/CWRj/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/CWRj/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/CWRj/.data/ObjectRepositoryTargetData/.hash",
@@ -10633,6 +10654,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.data/ObjectRepositoryTargetData/.images/.design/073f34Ad3006y-qJVK7TQFQ",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/G_2S/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/IJdx/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -10667,6 +10689,12 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/YP7p/.data/ObjectRepositoryTargetData/.hash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/YP7p/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/YP7p/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.data/ObjectRepositoryTargetData/.images/.design/0WfwLN44wiUSGI0oDKI33Pg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/eXNL/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/fAE-/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/fAE-/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/fAE-/.data/ObjectRepositoryTargetData/.hash",
@@ -10705,6 +10733,12 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.data/ObjectRepositoryTargetData/.images/.design/0pPa4UhY1FUOxX7wDah5Rkw",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/lyvL/qBth/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.data/ObjectRepositoryTargetData/.images/.design/0Uyc8YmMSOEqnmfVBMno7Yg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.hash",
@@ -11168,13 +11202,14 @@
         "contentFiles/any/any/.objects/.metadata",
         "contentFiles/any/any/.objects/.type",
         "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_11530423.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_40530006.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42629054.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_44927025.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_51416105.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_59408853.dll",
-        "lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.38.nupkg.sha512",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_24058510.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25181126.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47056750.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_55799963.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_61820044.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_7652101.dll",
+        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_830383.dll",
+        "lib_peoplesoft_9.2.library.runtime.1.0.1-alpha.39.nupkg.sha512",
         "lib_peoplesoft_9.2.library.runtime.nuspec"
       ]
     },
@@ -21145,8 +21180,8 @@
   "projectFileDependencyGroups": {
     "": [],
     "net6.0-windows7.0": [
-      "LIB_GraphAPI_1.0 >= 1.0.1-alpha.2 <= 1.0.1-alpha.2",
-      "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.38 <= 1.0.1-alpha.38",
+      "LIB_GraphAPI_1.0 >= 1.0.1-alpha.4 <= 1.0.1-alpha.4",
+      "LIB_PeopleSoft_9.2 >= 1.0.1-alpha.39 <= 1.0.1-alpha.39",
       "UiPath.Excel.Activities >= 2.20.2 <= 2.20.2",
       "UiPath.System.Activities >= 23.4.5 <= 23.4.5",
       "UiPath.Testing.Activities >= 23.4.1 <= 23.4.1",
@@ -21170,12 +21205,12 @@
           "LIB_GraphAPI_1.0": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.1-alpha.2, 1.0.1-alpha.2]"
+            "version": "[1.0.1-alpha.4, 1.0.1-alpha.4]"
           },
           "LIB_PeopleSoft_9.2": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.1-alpha.38, 1.0.1-alpha.38]"
+            "version": "[1.0.1-alpha.39, 1.0.1-alpha.39]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
