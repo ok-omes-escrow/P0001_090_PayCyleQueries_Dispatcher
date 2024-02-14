@@ -204,7 +204,7 @@
               <OutArgument x:TypeArguments="x:String">[strBody]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Body").ToString.Replace("{Date}",now.ToString("MM-dd-yyyy")).Replace("{Link}",in_Config("SharepointURL").ToString &amp; "/" &amp; in_Config("SharepointSubFolder").ToString)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[drEmailTemplate("Body").ToString.Replace("{Date}",now.ToString("MM-dd-yyyy")).Replace("{Link}",in_Config("SharepointURL").ToString &amp; "/" &amp; in_Config("SharedPathAppend").ToString &amp; "/" &amp; in_Config("SharepointSubFolder").ToString)]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">

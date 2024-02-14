@@ -219,9 +219,16 @@
     </ui:ExcelApplicationScope>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\SendEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="582,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Framework\SendEmail.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplateID">Complete</InArgument>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFilePath">[New list(of String)(New string(){strSummaryFilePath})]</InArgument>
+        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strEmailTemplateID">
+          <Literal x:TypeArguments="x:String">Complete</Literal>
+        </InArgument>
+        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="in_listAttachmentFilePath">
+          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New list(of String)(New string(){strSummaryFilePath})" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strExceptionDetails" />
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="582,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;End Create Summary Report.&quot;]" />
