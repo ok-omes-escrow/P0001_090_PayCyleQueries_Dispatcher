@@ -242,7 +242,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Refresh Process Monitor Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="410,295" sap2010:WorkflowViewState.IdRef="If_8">
+            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Refresh Process Monitor Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
@@ -418,7 +418,7 @@
                                   <OutArgument x:TypeArguments="x:Boolean">[boolValidDate]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:Boolean">[datetimeProcessInstanceTime&gt;in_datetimeProcessStartTime AND datetimeProcessInstanceTime&lt;in_datetimeProcessEndTime]</InArgument>
+                                  <InArgument x:TypeArguments="x:Boolean">[datetimeProcessInstanceTime&gt;=in_datetimeProcessStartTime AND datetimeProcessInstanceTime&lt;=in_datetimeProcessEndTime]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                             </scg:List>
