@@ -540,7 +540,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Transition.Condition>[SystemException IsNot Nothing]</Transition.Condition>
                   <Transition.To>
-                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="254,104" sap2010:WorkflowViewState.IdRef="State_2">
+                    <State x:Name="__ReferenceID3" sap2010:Annotation.AnnotationText="Read configuration file and initialize applications used in the process." DisplayName="Initialization" sap:VirtualizedContainerService.HintSize="782,5941" sap2010:WorkflowViewState.IdRef="State_2">
                       <State.Entry>
                         <TryCatch DisplayName="Try initializing settings and applications" sap:VirtualizedContainerService.HintSize="736,5522" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                           <sap:WorkflowViewStateService.ViewState>
@@ -589,7 +589,7 @@
                                         <OutArgument x:TypeArguments="s:DateTime">[datetimeAutomationStartTime]</OutArgument>
                                       </Assign.To>
                                       <Assign.Value>
-                                        <InArgument x:TypeArguments="s:DateTime">[TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Now,timezoneinfo.Local.Id, "Central Standard Time")]</InArgument>
+                                        <InArgument x:TypeArguments="s:DateTime">[TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Now,timezoneinfo.Local.Id, "UTC")]</InArgument>
                                       </Assign.Value>
                                     </Assign>
                                     <ui:LogMessage DisplayName="Log Message screen resolution" sap:VirtualizedContainerService.HintSize="468,141" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="Info" Message="[&quot;The primary screen resolution is: &quot;+Screen.PrimaryScreen.Bounds.Width.ToString+&quot; x &quot;+ Screen.PrimaryScreen.Bounds.Height.ToString]" />
@@ -1156,9 +1156,9 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <Transition.To>
-                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="660,2318" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
+                            <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="614,2133" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="614,2093" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1342,7 +1342,7 @@
                                                       <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="datetimeAutomationStartTime" />
                                                     </InArgument>
                                                     <InArgument x:TypeArguments="s:DateTime" x:Key="in_datetimeEndTime">
-                                                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Now,timezoneinfo.Local.Id, &quot;Central Standard Time&quot;)" />
+                                                      <VisualBasicValue x:TypeArguments="s:DateTime" ExpressionText="TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Now,timezoneinfo.Local.Id, &quot;UTC&quot;)" />
                                                     </InArgument>
                                                   </ui:InvokeWorkflowFile.Arguments>
                                                 </ui:InvokeWorkflowFile>

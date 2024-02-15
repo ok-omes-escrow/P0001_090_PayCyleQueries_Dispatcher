@@ -12,6 +12,8 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "intProcessingCount&StateMachine_1",
+        "datetimeAutomationStartTime&StateMachine_1",
         "strScreenshotFilePath&Sequence_26",
         "drExceptionRow&Sequence_81",
         "drExceptionRow&Sequence_79",
@@ -440,11 +442,9 @@
       "Path": "Test.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "config&Sequence_1",
-        "dt_Data&Sequence_1",
-        "queueitems&Sequence_1",
-        "screenshot&Sequence_1",
-        "result&Sequence_1"
+        "startdate&Sequence_1",
+        "enddate&Sequence_1",
+        "NowDate&Sequence_1"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
@@ -483,6 +483,22 @@
         "in_Config",
         "in_strEmailTemplateID",
         "in_listAttachmentFilePath"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Misc/CreateSummaryReport.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSummaryFilePath&Sequence_1",
+        "QueueItems&Sequence_1",
+        "dt_Summary&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Config",
+        "in_datetimeStartTime",
+        "in_datetimeEndTime"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
