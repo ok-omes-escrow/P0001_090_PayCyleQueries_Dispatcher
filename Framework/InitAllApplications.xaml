@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_PeopleSoft_9_2;assembly=LIB_PeopleSoft_9.2" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Initialize_Applications" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:l="clr-namespace:LIB_GraphAPI;assembly=LIB_GraphAPI" xmlns:l1="clr-namespace:LIB_PeopleSoft_9_2;assembly=LIB_PeopleSoft_9.2" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,2738</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,4339</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,6 +72,7 @@
       <x:String>UiPath.UIAutomationNext.Exceptions</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.UIAutomationNext.Triggers</x:String>
+      <x:String>LIB_GraphAPI</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -148,17 +149,19 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>LIB_GraphAPI</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="550,2673" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1236,4274" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <TryCatch DisplayName="Try Catch - Clear Downloads folder" sap:VirtualizedContainerService.HintSize="488,340" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1174,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <TryCatch DisplayName="Try Catch - Clear Downloads folder" sap:VirtualizedContainerService.HintSize="1174,340" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <Sequence sap2010:Annotation.AnnotationText="Deletes old files in Download folder" DisplayName="Clear Downloads Folder" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <Sequence.Variables>
@@ -240,16 +243,16 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message Cleared Downloads folder" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloads folder cleared&quot;]" />
-    <TryCatch DisplayName="Try Catch - Create Local Working folder" sap:VirtualizedContainerService.HintSize="488,396" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <ui:LogMessage DisplayName="Log message Cleared Downloads folder" sap:VirtualizedContainerService.HintSize="1174,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Trace" Message="[&quot;Downloads folder cleared&quot;]" />
+    <TryCatch DisplayName="Try Catch - Create Local Working folder" sap:VirtualizedContainerService.HintSize="1174,1357" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Sequence sap2010:Annotation.AnnotationText="Creates the folder structure for&#xA;Manual Query&#xA;Bot query&#xA;Screenshot&#xA;Summary Report" DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="450,168" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence sap2010:Annotation.AnnotationText="Creates the folder structure for&#xA;Manual Query&#xA;Bot query&#xA;Screenshot&#xA;Summary Report" DisplayName="Create Local Working folder" sap:VirtualizedContainerService.HintSize="1136,1129" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolFolderExists" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
             </scg:Dictionary>
@@ -429,11 +432,11 @@
             </Sequence>
           </Parallel>
           <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Screenshot" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_16" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,&quot;Screenshot&quot;)]" />
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Summary Report" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_17" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,&quot;Summary Report&quot;)]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Summary Report" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_17" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalSummaryFolderName&quot;).ToString)]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1140,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -444,7 +447,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Create Local Working Folder Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="410,473" sap2010:WorkflowViewState.IdRef="If_19">
+            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Create Local Working Folder Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_19">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_57">
                   <sap:WorkflowViewStateService.ViewState>
@@ -473,8 +476,8 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message Local folders created" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Local Working folders created&quot;]" />
-    <TryCatch DisplayName="Try Catch - Initialize Sharepoint Folders" sap:VirtualizedContainerService.HintSize="488,611" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+    <ui:LogMessage DisplayName="Log message Local folders created" sap:VirtualizedContainerService.HintSize="1174,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Trace" Message="[&quot;Local Working folders created&quot;]" />
+    <TryCatch DisplayName="Try Catch - Initialize Sharepoint Folders" sap:VirtualizedContainerService.HintSize="1174,611" sap2010:WorkflowViewState.IdRef="TryCatch_4">
       <TryCatch.Try>
         <If Condition="[in_Config(&quot;SharepointBotFolderPath&quot;).ToString.Trim=&quot;&quot;]" DisplayName="If Both folder path is null" sap:VirtualizedContainerService.HintSize="410,383" sap2010:WorkflowViewState.IdRef="If_16">
           <If.Then>
@@ -537,7 +540,8 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="488,340" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <l:Download_File out_boolFileDownloaded="{x:Null}" out_strDownloadedFilePath="{x:Null}" DisplayName="Download File" sap:VirtualizedContainerService.HintSize="1174,600" sap2010:WorkflowViewState.IdRef="Download_File_1" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAsset="[in_Config(&quot;AppSecret&quot;).ToString]" in_strDelay="00:01:00" in_strLocalFilePath="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalSummaryFolderName&quot;).ToString)]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSpParentFolderPath="[in_Config(&quot;SharepointSubFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryTemplateName&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" />
+    <TryCatch DisplayName="Try Catch - Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="1174,340" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <TryCatch.Try>
         <Sequence sap2010:Annotation.AnnotationText="Open browser and logs into Peoplesoft" DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <Sequence.Variables>
@@ -552,7 +556,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PeoplesoftCredential&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential for Peoplesoft app" FolderPath="[in_Config(&quot;PeoplesoftCredentialAssetFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[secstrPassword]" Username="[strUsername]" />
-          <l:Peoplesoft_Login DisplayName="Log into Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,294" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_2" in_strLoginException="[DirectCast(in_Config(&quot;SE_2&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUserIDTextboxException="[DirectCast(in_Config(&quot;SE_1&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strUsername="[strUsername]" />
+          <l1:Peoplesoft_Login DisplayName="Log into Peoplesoft app" sap:VirtualizedContainerService.HintSize="388,294" sap2010:WorkflowViewState.IdRef="Peoplesoft_Login_2" in_strLoginException="[DirectCast(in_Config(&quot;SE_2&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strPassword="[secstrPassword]" in_strPeoplesoftURL="[in_Config(&quot;PeoplesoftURL&quot;).ToString]" in_strUserIDTextboxException="[DirectCast(in_Config(&quot;SE_1&quot;),DataRow)(&quot;Exception Details&quot;).ToString]" in_strUsername="[strUsername]" />
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
@@ -567,7 +571,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Initialize Peoplesoft Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="410,473" sap2010:WorkflowViewState.IdRef="If_21">
+            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Initialize Peoplesoft Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_21">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_63">
                   <sap:WorkflowViewStateService.ViewState>
@@ -596,6 +600,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log message (Initialized applications)" sap:VirtualizedContainerService.HintSize="488,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
+    <ui:LogMessage DisplayName="Log message (Initialized applications)" sap:VirtualizedContainerService.HintSize="1174,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Application Initialized&quot;]" />
   </Sequence>
 </Activity>
