@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,4339</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,4379</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Initialization_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -511,7 +511,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Initialize Sharepoint Folders Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="410,473" sap2010:WorkflowViewState.IdRef="If_20">
+            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Initialize Sharepoint Folders Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_20">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_60">
                   <sap:WorkflowViewStateService.ViewState>
@@ -540,7 +540,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <l:Download_File out_boolFileDownloaded="{x:Null}" out_strDownloadedFilePath="{x:Null}" DisplayName="Download File" sap:VirtualizedContainerService.HintSize="1174,600" sap2010:WorkflowViewState.IdRef="Download_File_1" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAsset="[in_Config(&quot;AppSecret&quot;).ToString]" in_strDelay="00:01:00" in_strLocalFilePath="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalSummaryFolderName&quot;).ToString)]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSpParentFolderPath="[in_Config(&quot;SharepointSubFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryTemplateName&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" />
+    <l:Download_File out_boolFileDownloaded="{x:Null}" out_strDownloadedFilePath="{x:Null}" DisplayName="Download File : Summary Report" sap:VirtualizedContainerService.HintSize="1174,600" sap2010:WorkflowViewState.IdRef="Download_File_1" in_strApplicationIDAssetName="[in_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAsset="[in_Config(&quot;AppSecret&quot;).ToString]" in_strDelay="00:01:00" in_strLocalFilePath="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalSummaryFolderName&quot;).ToString)]" in_strOrchestratorFolderPath="[in_Config(&quot;AssetFolder&quot;).ToString]" in_strParentDriveItemOptional="[Nothing]" in_strSharepointURL="[in_Config(&quot;SharepointURL&quot;).ToString]" in_strSpParentFolderPath="[in_Config(&quot;SharepointSubFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryFolder&quot;).ToString &amp; &quot;/&quot; &amp; in_Config(&quot;SharepointSummaryTemplateName&quot;).ToString]" in_strTenantIDAssetName="[in_Config(&quot;TenantID&quot;).ToString]" />
     <TryCatch DisplayName="Try Catch - Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="1174,340" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <TryCatch.Try>
         <Sequence sap2010:Annotation.AnnotationText="Open browser and logs into Peoplesoft" DisplayName="Initialize Peoplesoft" sap:VirtualizedContainerService.HintSize="450,112" sap2010:WorkflowViewState.IdRef="Sequence_10">
