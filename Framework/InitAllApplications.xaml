@@ -214,7 +214,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Clear downloads Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="410,473" sap2010:WorkflowViewState.IdRef="If_17">
+            <If Condition="[exception.Message.Contains(&quot;SE&quot;) Or exception.Message.Contains(&quot;BE&quot;)]" DisplayName="If Clear downloads Exception Message contains SE or BE" sap:VirtualizedContainerService.HintSize="334,182" sap2010:WorkflowViewState.IdRef="If_17">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="376,113" sap2010:WorkflowViewState.IdRef="Sequence_49">
                   <sap:WorkflowViewStateService.ViewState>
@@ -431,7 +431,7 @@
               </If>
             </Sequence>
           </Parallel>
-          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Screenshot" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_16" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,&quot;Screenshot&quot;)]" />
+          <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Screenshot" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_16" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalScreenshotFolderName&quot;).ToString)]" />
           <ui:CreateDirectory ContinueOnError="{x:Null}" Output="{x:Null}" DisplayName="Create Folder - Summary Report" sap:VirtualizedContainerService.HintSize="1074,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_17" Path="[System.IO.Path.Combine(in_Config(&quot;LocalFolder&quot;).ToString,in_Config(&quot;logF_BusinessProcessName&quot;).ToString,in_Config(&quot;LocalSummaryFolderName&quot;).ToString)]" />
         </Sequence>
       </TryCatch.Try>

@@ -948,11 +948,11 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                     </ui:IfElseIf>
-                                    <ui:LogMessage DisplayName="Log Message - Start and end dates identified" sap:VirtualizedContainerService.HintSize="501,141" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Identified start date: &quot; &amp; dateProcessStartTime.ToString(&quot;MM/dd/yyyy HH:mm tt&quot;) &amp; &quot; and end date: &quot; &amp;dateProcessEndTime.ToString(&quot;MM/dd/yyyy HH:mm tt&quot;)]" />
+                                    <ui:LogMessage DisplayName="Log Message - Start and end dates identified" sap:VirtualizedContainerService.HintSize="536,141" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Identified start date: &quot; &amp; dateProcessStartTime.ToString(&quot;MM/dd/yyyy HH:mm tt&quot;) &amp; &quot; and end date: &quot; &amp;dateProcessEndTime.ToString(&quot;MM/dd/yyyy HH:mm tt&quot;)]" />
                                   </Sequence>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="567,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="602,21" sap2010:WorkflowViewState.IdRef="Catch`1_16">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1173,7 +1173,7 @@
                           <Transition.To>
                             <State x:Name="__ReferenceID1" sap2010:Annotation.AnnotationText="End process and close all applications used." DisplayName="End Process" sap:VirtualizedContainerService.HintSize="144,120" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True">
                               <State.Entry>
-                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="614,2093" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                <TryCatch DisplayName="Try to close all aplications" sap:VirtualizedContainerService.HintSize="490,943" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1406,10 +1406,10 @@
                                     </Sequence>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="580,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="456,780" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
@@ -1417,7 +1417,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="Exception" />
                                         </ActivityAction.Argument>
-                                        <Sequence DisplayName="Failed to close applications, so kill processes" sap:VirtualizedContainerService.HintSize="450,625" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <Sequence DisplayName="Failed to close applications, so kill processes" sap:VirtualizedContainerService.HintSize="450,711" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                           <Sequence.Variables>
                                             <Variable x:TypeArguments="x:String" Name="strScreenshotFilePath" />
                                           </Sequence.Variables>
@@ -1434,8 +1434,12 @@
                                           </ui:InvokeWorkflowFile>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_45" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                                             <ui:InvokeWorkflowFile.Arguments>
-                                              <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[System.IO.Path.Combine(Config("LocalFolder").ToString,Config("logF_BusinessProcessName").ToString,"Screenshot")]</InArgument>
-                                              <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strScreenshotFilePath]</InOutArgument>
+                                              <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
+                                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="System.IO.Path.Combine(Config(&quot;LocalFolder&quot;).ToString,Config(&quot;logF_BusinessProcessName&quot;).ToString,Config(&quot;LocalScreenshotFolderName&quot;).ToString)" />
+                                              </InArgument>
+                                              <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">
+                                                <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strScreenshotFilePath" />
+                                              </InOutArgument>
                                             </ui:InvokeWorkflowFile.Arguments>
                                           </ui:InvokeWorkflowFile>
                                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\SendEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_46" UnSafe="False" WorkflowFileName="Framework\SendEmail.xaml">
@@ -1487,8 +1491,12 @@
                               <ui:LogMessage DisplayName="Log Message (initialization failure)" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="Error" Message="[&quot;System exception at initialization: &quot; + SystemException.Message + &quot; at Source: &quot; + SystemException.Source]" />
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\TakeScreenshot.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="Framework\TakeScreenshot.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_Folder">[System.IO.Path.Combine(Config("LocalFolder").ToString,Config("logF_BusinessProcessName").ToString,"Screenshot")]</InArgument>
-                                  <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">[strScreenshotFilePath]</InOutArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="in_Folder">
+                                    <VisualBasicValue x:TypeArguments="x:String" ExpressionText="System.IO.Path.Combine(Config(&quot;LocalFolder&quot;).ToString,Config(&quot;logF_BusinessProcessName&quot;).ToString,Config(&quot;LocalScreenshotFolderName&quot;).ToString)" />
+                                  </InArgument>
+                                  <InOutArgument x:TypeArguments="x:String" x:Key="io_FilePath">
+                                    <VisualBasicReference x:TypeArguments="x:String" ExpressionText="strScreenshotFilePath" />
+                                  </InOutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Framework\SendEmail.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_40" UnSafe="False" WorkflowFileName="Framework\SendEmail.xaml">

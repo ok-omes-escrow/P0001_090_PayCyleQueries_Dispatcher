@@ -329,6 +329,9 @@
       "Path": "Misc/InitializeSharepointFolders.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "strSharepointMainFolder&Sequence_2",
+        "strSharepointRootFolderPath&Sequence_2",
+        "strSharepointSubFolder&Sequence_2",
         "strRootFolderName&Sequence_2",
         "strRootFolderPath&Sequence_2",
         "boolFolderFound&Sequence_2",

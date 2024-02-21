@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,5414</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,6644</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>InitializeSharepointFolders_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,11 +124,14 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InitializeSharepointFolders" sap:VirtualizedContainerService.HintSize="1332,5349" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="InitializeSharepointFolders" sap:VirtualizedContainerService.HintSize="1332,6579" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolFolderFound" />
       <Variable x:TypeArguments="x:String" Name="strRootFolderPath" />
       <Variable x:TypeArguments="x:String" Name="strRootFolderName" />
+      <Variable x:TypeArguments="x:String" Name="strSharepointSubFolder" />
+      <Variable x:TypeArguments="x:String" Name="strSharepointRootFolderPath" />
+      <Variable x:TypeArguments="x:String" Name="strSharepointMainFolder" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -137,10 +140,84 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Creating Sharepoint Folder" sap:VirtualizedContainerService.HintSize="1270,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Creating Sharepoint folders&quot;]" />
-    <l:Files_or_Folders_Exist in_strSharepointSubfolder="{x:Null}" out_intResultCount="{x:Null}" DisplayName="Files or Folders Exist" sap:VirtualizedContainerService.HintSize="1270,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_27" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[io_Config(&quot;SharepointSubFolder&quot;).ToString]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFolderFound]">
+    <Assign DisplayName="Assign strSharepointSubFolder" sap:VirtualizedContainerService.HintSize="1270,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strSharepointSubFolder]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[io_Config("SharepointSubFolder").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <If Condition="[strSharepointSubFolder.Contains(&quot;/&quot;)]" DisplayName="If strSharepointSubFolder contains /" sap:VirtualizedContainerService.HintSize="1270,622" sap2010:WorkflowViewState.IdRef="If_26">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="465,220" sap2010:WorkflowViewState.IdRef="Sequence_39">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign Sharepoint folders with /" sap:VirtualizedContainerService.HintSize="423,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strSharepointRootFolderPath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[strSharepointSubFolder.Substring(0,strSharepointSubFolder.LastIndexOf("/"))]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strSharepointMainFolder]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[strSharepointSubFolder.Substring(strSharepointSubFolder.LastIndexOf("/")+1,strSharepointSubFolder.Length-1-strSharepointSubFolder.LastIndexOf("/"))]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="465,220" sap2010:WorkflowViewState.IdRef="Sequence_40">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:MultipleAssign DisplayName="Multiple Assign Sharepoint folders without /" sap:VirtualizedContainerService.HintSize="423,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strSharepointRootFolderPath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">
+                      <Literal x:TypeArguments="x:String" Value="" />
+                    </InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strSharepointMainFolder]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[strSharepointSubFolder]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Files or Folders Exist" sap:VirtualizedContainerService.HintSize="1270,498" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_27" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[strSharepointMainFolder]" in_strSharepointSubfolder="[strSharepointRootFolderPath]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolFolderFound]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -166,7 +243,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message - Root folder found" sap:VirtualizedContainerService.HintSize="1270,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sharepoint root folder found&quot; &amp; io_Config(&quot;SharepointSubFolder&quot;).ToString]" />
+    <ui:LogMessage DisplayName="Log Message - Root folder found" sap:VirtualizedContainerService.HintSize="1270,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sharepoint root folder found : &quot; &amp; strSharepointSubFolder]" />
     <ui:LogMessage DisplayName="Log Message - Validate query folder" sap:VirtualizedContainerService.HintSize="1270,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Validating Manual and Bot Query folders&quot;]" />
     <Parallel DisplayName="Parallel Sharepoint folder creation" sap:VirtualizedContainerService.HintSize="1270,4022" sap2010:WorkflowViewState.IdRef="Parallel_1">
       <Sequence DisplayName="Manual Folder Sharepoint" sap:VirtualizedContainerService.HintSize="548,3975" sap2010:WorkflowViewState.IdRef="Sequence_5">
@@ -180,7 +257,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Check if Manual Folder Exist" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_19" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[io_Config(&quot;ManualFolderName&quot;).ToString]" in_strSharepointSubfolder="[io_Config(&quot;SharepointSubFolder&quot;).ToString]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolManualFolderFound]">
+        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Check if Manual Folder Exist" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_19" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[io_Config(&quot;ManualFolderName&quot;).ToString]" in_strSharepointSubfolder="[strSharepointSubFolder]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolManualFolderFound]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -196,7 +273,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <l:Create_Folder DisplayName="Create Manual Query Folder" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="Create_Folder_14" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointNewFolderName="[io_Config(&quot;ManualFolderName&quot;).ToString]" in_strSharepointParentFolderPath="[io_Config(&quot;SharepointSubFolder&quot;).ToString]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolFolderCreated="[boolManualFolderCreated]">
+              <l:Create_Folder DisplayName="Create Manual Query Folder" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="Create_Folder_14" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointNewFolderName="[io_Config(&quot;ManualFolderName&quot;).ToString]" in_strSharepointParentFolderPath="[strSharepointSubFolder]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolFolderCreated="[boolManualFolderCreated]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -410,7 +487,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Check if Bot Folder Exists" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_20" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[io_Config(&quot;BotFolderName&quot;).ToString]" in_strSharepointSubfolder="[io_Config(&quot;SharepointSubFolder&quot;).ToString]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolBotFolderFound]">
+        <l:Files_or_Folders_Exist out_intResultCount="{x:Null}" DisplayName="Check if Bot Folder Exists" sap:VirtualizedContainerService.HintSize="486,52" sap2010:WorkflowViewState.IdRef="Files_or_Folders_Exist_20" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointFileFolderToSearch="[io_Config(&quot;BotFolderName&quot;).ToString]" in_strSharepointSubfolder="[strSharepointSubFolder]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolResultFileFolderFound="[boolBotFolderFound]">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -426,7 +503,7 @@
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <l:Create_Folder DisplayName="Create Bot Query Folder" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="Create_Folder_15" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointNewFolderName="[io_Config(&quot;BotFolderName&quot;).ToString]" in_strSharepointParentFolderPath="[io_Config(&quot;SharepointSubFolder&quot;).ToString]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolFolderCreated="[boolBotFolderCreated]">
+              <l:Create_Folder DisplayName="Create Bot Query Folder" sap:VirtualizedContainerService.HintSize="410,52" sap2010:WorkflowViewState.IdRef="Create_Folder_15" in_strApplicationIDAssetName="[io_Config(&quot;AppID&quot;).ToString]" in_strApplicationSecretAssetName="[io_Config(&quot;AppSecret&quot;).ToString]" in_strOrchestratorFolderPath="[io_Config(&quot;AssetFolder&quot;).ToString]" in_strSharepointNewFolderName="[io_Config(&quot;BotFolderName&quot;).ToString]" in_strSharepointParentFolderPath="[strSharepointSubFolder]" in_strSharepointURL="[io_Config(&quot;SharepointURL&quot;).ToString]" in_strTenantIDAssetName="[io_Config(&quot;TenantID&quot;).ToString]" out_boolFolderCreated="[boolBotFolderCreated]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
