@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,6408</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>810,6539</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetQueriesFromProcessMonitor_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -131,7 +131,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetQueriesFromProcessMonitor" sap:VirtualizedContainerService.HintSize="820,6303" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetQueriesFromProcessMonitor" sap:VirtualizedContainerService.HintSize="820,6474" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_ProcessList" />
       <Variable x:TypeArguments="x:Int32" Name="intCounter" />
@@ -190,15 +190,15 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <If Condition="[CINT(Now.DayOfWeek)=1]" DisplayName="If Monday" sap:VirtualizedContainerService.HintSize="758,351" sap2010:WorkflowViewState.IdRef="If_9">
+    <If Condition="[CINT(Now.DayOfWeek)=1]" DisplayName="If Monday" sap:VirtualizedContainerService.HintSize="758,352" sap2010:WorkflowViewState.IdRef="If_9">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_20">
+        <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_20">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_9">
+          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_9">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Int32">[intDayDeduction]</OutArgument>
             </Assign.To>
@@ -334,9 +334,9 @@
         <InArgument x:TypeArguments="x:Int32">0</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[dt_ProcessList.RowCount&gt;0]" DisplayName="If dt_ProcessList.RowCount&gt;0" sap:VirtualizedContainerService.HintSize="758,3775" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[dt_ProcessList.RowCount&gt;0]" DisplayName="If dt_ProcessList.RowCount&gt;0" sap:VirtualizedContainerService.HintSize="758,3945" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="724,3593" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="724,3763" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="boolValidDate" />
           </Sequence.Variables>
@@ -346,13 +346,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <ui:LogMessage DisplayName="Log Message - Rows extracted" sap:VirtualizedContainerService.HintSize="682,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Rows extracted from Process List&quot;]" />
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ProcessList]" DisplayName="For Each Process instance from Process Monitor Page" sap:VirtualizedContainerService.HintSize="682,3324" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ProcessList]" DisplayName="For Each Process instance from Process Monitor Page" sap:VirtualizedContainerService.HintSize="682,3494" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="648,3209" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="648,3379" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strFileName" />
                     <Variable x:TypeArguments="s:DateTime" Name="datetimeProcessInstanceTime" />
@@ -457,9 +457,9 @@
                       </scg:List>
                     </ui:RemoveLogFields.Fields>
                   </ui:RemoveLogFields>
-                  <If Condition="[boolValidDate]" DisplayName="If Current instance has valid date" sap:VirtualizedContainerService.HintSize="586,2012" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If Condition="[boolValidDate]" DisplayName="If Current instance has valid date" sap:VirtualizedContainerService.HintSize="586,2182" sap2010:WorkflowViewState.IdRef="If_5">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="552,1830" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence sap:VirtualizedContainerService.HintSize="552,2000" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="strQueryDescription" />
                           <Variable x:TypeArguments="x:String" Name="strReportID" />
@@ -488,7 +488,7 @@
                             <InArgument x:TypeArguments="x:Object">[strRunControlID]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If Condition="[strFileName&lt;&gt;&quot;&quot;]" DisplayName="If strFileName=&quot;&quot;" sap:VirtualizedContainerService.HintSize="510,655" sap2010:WorkflowViewState.IdRef="If_6">
+                        <If Condition="[strFileName&lt;&gt;&quot;&quot;]" DisplayName="If strFileName=&quot;&quot;" sap:VirtualizedContainerService.HintSize="510,825" sap2010:WorkflowViewState.IdRef="If_6">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="476,473" sap2010:WorkflowViewState.IdRef="Sequence_14">
                               <Sequence.Variables>

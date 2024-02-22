@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1474,3805</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1474,3815</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>AddItemsToQueue_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.CodeDom</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AddItemsToQueue" sap:VirtualizedContainerService.HintSize="705,3740" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AddItemsToQueue" sap:VirtualizedContainerService.HintSize="705,3750" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strDestinationBotPath" />
       <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="QueueItems" />
@@ -116,13 +116,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message - Starting AddItemsToQueue" sap:VirtualizedContainerService.HintSize="643,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Starting AddItemsToQueue Workflow...&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_ProcessList]" DisplayName="For Each Row in Data Table - Move file to bot or manual folder" sap:VirtualizedContainerService.HintSize="643,2172" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_ProcessList]" DisplayName="For Each Row in Data Table - Move file to bot or manual folder" sap:VirtualizedContainerService.HintSize="643,2181" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Move files to bot and manual folder" sap:VirtualizedContainerService.HintSize="609,2056" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Move files to bot and manual folder" sap:VirtualizedContainerService.HintSize="609,2064" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="strSourcePath" />
               <Variable x:TypeArguments="x:String" Name="strDestinationManualPath" />
@@ -133,7 +133,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:IfElseIf DisplayName="Else If - Run Control matches to bot queries" sap:VirtualizedContainerService.HintSize="547,1423" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf DisplayName="Else If - Run Control matches to bot queries" sap:VirtualizedContainerService.HintSize="547,1429" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[CurrentRow(&quot;RunControlID&quot;).ToString.Trim.ToLower.Equals(in_Config(&quot;Query1RunID&quot;).ToString.ToLower.Trim)]">
@@ -348,7 +348,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:IfElseIf>
-            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="547,482" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+            <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="547,484" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
               <ui:IfElseIf.ConditionBlocks>
                 <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                   <ui:IfElseIfBlock BlockType="If" Condition="[CurrentRow(&quot;Attachment&quot;).ToString.ToLower.Trim = &quot;yes&quot; AND CurrentRow(&quot;QueryType&quot;).ToString.Trim.Contains(in_Config(&quot;BotFolderName&quot;).ToString)]">
@@ -376,7 +376,7 @@
                                   <OutArgument x:TypeArguments="x:String">[strDestinationBotPath]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("LocalFolder").ToString,in_Config("logF_BusinessProcessName").ToString,in_Config("BotFolderName").ToString,now.ToString("yyyy"),now.ToString("MMMM"),now.ToString("dd"),path.GetFileName(CurrentRow("Path").ToString))]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("LocalFolder").ToString,in_Config("logF_BusinessProcessName").ToString,in_Config("BotFolderName").ToString,now.ToString("yyyy"),now.ToString("MMMM"),now.ToString("dd"),in_Config("TimeOfDayFolderName").ToString,path.GetFileName(CurrentRow("Path").ToString))]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -419,7 +419,7 @@
                                   <OutArgument x:TypeArguments="x:String">[strDestinationManualPath]</OutArgument>
                                 </ui:AssignOperation.To>
                                 <ui:AssignOperation.Value>
-                                  <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("LocalFolder").ToString,in_Config("logF_BusinessProcessName").ToString,in_Config("ManualFolderName").ToString,now.ToString("yyyy"),now.ToString("MMMM"),now.ToString("dd"),path.GetFileName(CurrentRow("Path").ToString))]</InArgument>
+                                  <InArgument x:TypeArguments="x:String">[Path.Combine(in_Config("LocalFolder").ToString,in_Config("logF_BusinessProcessName").ToString,in_Config("ManualFolderName").ToString,now.ToString("yyyy"),now.ToString("MMMM"),now.ToString("dd"),in_Config("TimeOfDayFolderName").ToString,path.GetFileName(CurrentRow("Path").ToString))]</InArgument>
                                 </ui:AssignOperation.Value>
                               </ui:AssignOperation>
                               <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
@@ -444,7 +444,7 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_ProcessList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="643,1055" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dt_ProcessList]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="643,1056" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
