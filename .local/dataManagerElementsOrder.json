@@ -180,7 +180,8 @@
       "Path": "Peoplesoft/GetQueriesFromProcessMonitor.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "drExceptionRow&Sequence_18",
+        "intDayDeduction&Sequence_1",
+        "strException&Sequence_1",
         "drExceptionRow&Sequence_16",
         "strRunControlID&Sequence_11",
         "strDestinationPath&Sequence_14",
