@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {
+    "net8.0-windows7.0": {
       "AutoMapper/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -141,32 +141,27 @@
           "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_5506821.dll": {}
         }
       },
-      "LIB_PeopleSoft_9.2/1.0.3-alpha": {
+      "LIB_PeopleSoft_9.2/1.0.6": {
         "type": "package",
         "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.3-alpha",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
-        }
-      },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.3-alpha": {
-        "type": "package",
-        "dependencies": {
-          "UiPath.System.Runtime.Windows": "23.4.5",
-          "UiPath.UIAutomation.Activities.Runtime": "23.4.8"
         },
         "compile": {
-          "lib/net6.0-windows7.0/_._": {}
+          "lib/net8.0-windows7.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25360113.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_45485984.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47888759.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_49991340.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60082571.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60684095.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_6585490.dll": {}
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_19873111.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_26584254.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_27047851.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_28773635.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42941703.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_46346307.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_48299296.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5079042.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_52250442.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5407170.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -5238,7 +5233,7 @@
         }
       }
     },
-    "net6.0-windows7.0/win10-x64": {
+    "net8.0-windows7.0/win-x64": {
       "AutoMapper/9.0.0": {
         "type": "package",
         "dependencies": {
@@ -5378,32 +5373,27 @@
           "lib/net6.0-windows7.0/LIB_GraphAPI_Expressions_5506821.dll": {}
         }
       },
-      "LIB_PeopleSoft_9.2/1.0.3-alpha": {
+      "LIB_PeopleSoft_9.2/1.0.6": {
         "type": "package",
         "dependencies": {
-          "LIB_PeopleSoft_9.2.Library.Runtime": "1.0.3-alpha",
           "UiPath.System.Activities": "23.4.5",
           "UiPath.UIAutomation.Activities": "23.4.8"
-        }
-      },
-      "LIB_PeopleSoft_9.2.Library.Runtime/1.0.3-alpha": {
-        "type": "package",
-        "dependencies": {
-          "UiPath.System.Runtime.Windows": "23.4.5",
-          "UiPath.UIAutomation.Activities.Runtime": "23.4.8"
         },
         "compile": {
-          "lib/net6.0-windows7.0/_._": {}
+          "lib/net8.0-windows7.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25360113.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_45485984.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47888759.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_49991340.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60082571.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60684095.dll": {},
-          "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_6585490.dll": {}
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_19873111.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_26584254.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_27047851.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_28773635.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42941703.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_46346307.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_48299296.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5079042.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_52250442.dll": {},
+          "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5407170.dll": {}
         },
         "contentFiles": {
           "contentFiles/any/any/_._": {
@@ -6116,14 +6106,7 @@
         "type": "package"
       },
       "Microsoft.Management.Infrastructure.Runtime.Win/2.0.0": {
-        "type": "package",
-        "runtime": {
-          "runtimes/win10-x64/lib/netstandard1.6/Microsoft.Management.Infrastructure.Native.dll": {},
-          "runtimes/win10-x64/lib/netstandard1.6/Microsoft.Management.Infrastructure.dll": {}
-        },
-        "native": {
-          "runtimes/win10-x64/native/_._": {}
-        }
+        "type": "package"
       },
       "Microsoft.NETCore.Platforms/5.0.0": {
         "type": "package",
@@ -6836,8 +6819,7 @@
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "runtime.win7-x64.runtime.native.System.IO.Compression": "4.3.0"
+          "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -7068,21 +7050,6 @@
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
-        }
-      },
-      "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
-        "type": "package",
-        "native": {
-          "runtimes/win7-x64/native/_._": {}
-        }
-      },
-      "runtime.win7.System.Private.Uri/4.3.0": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard/_._": {}
-        },
-        "runtime": {
-          "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
         }
       },
       "SharpZipLib/1.3.3": {
@@ -8112,8 +8079,7 @@
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "runtime.win7.System.Private.Uri": "4.3.0"
+          "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
           "ref/netstandard/_._": {}
@@ -10511,10 +10477,10 @@
         "lib_graphapi_1.0.library.runtime.nuspec"
       ]
     },
-    "LIB_PeopleSoft_9.2/1.0.3-alpha": {
-      "sha512": "jwcvkbz5LOoVKu3wUYRECZqftmF8ii4SLYBK8z+ECPXx3E4pUL1TV2Oy+cFSfBLzS0f2SJROhbXQ75sl4uM3xQ==",
+    "LIB_PeopleSoft_9.2/1.0.6": {
+      "sha512": "O/mDhcM0I03j0r+nm78VS0VyuWGAkVeOcMMVqXJnLRykBAtBFsjaPhZAEGUBEicZXNfaB2ceipHbPNH1ypQATQ==",
       "type": "package",
-      "path": "lib_peoplesoft_9.2/1.0.3-alpha",
+      "path": "lib_peoplesoft_9.2/1.0.6",
       "files": [
         ".nupkg.metadata",
         "Oracle symbol.PNG",
@@ -10534,6 +10500,10 @@
         "content/Download File From Process Monitor.xaml",
         "content/Download File From Process Monitor.xaml.json",
         "content/Extract File Info.xaml",
+        "content/Financial Peoplesoft Login.xaml",
+        "content/Get Email Address for the Customer.xaml",
+        "content/Get Email Address for the Customer.xaml.json",
+        "content/Navigate to Customer Information.xaml",
         "content/Navigate to Process Scheduler.xaml",
         "content/Peoplesoft Log Out.xaml",
         "content/Peoplesoft Login.xaml",
@@ -10543,31 +10513,9 @@
         "content/Refresh Process Monitor - Date Range.xaml.json",
         "content/Refresh Process Monitor.xaml",
         "content/Refresh Process Monitor.xaml.json",
-        "content/Runtime.Mapping.json",
         "content/bindings.json",
         "content/bindings_v2.json",
         "content/project.json",
-        "lib_peoplesoft_9.2.1.0.3-alpha.nupkg.sha512",
-        "lib_peoplesoft_9.2.nuspec"
-      ]
-    },
-    "LIB_PeopleSoft_9.2.Library.Runtime/1.0.3-alpha": {
-      "sha512": "50k3PbK5urHW7iw9lbp2QyB5owAITBgtLlk4FuJVmp/VraEUxWYTRsNlkGX3Jn7i9kiv46b5iKSxdonIICJQBQ==",
-      "type": "package",
-      "path": "lib_peoplesoft_9.2.library.runtime/1.0.3-alpha",
-      "files": [
-        ".nupkg.metadata",
-        "content/.package/Oracle symbol.PNG",
-        "content/.settings/Release/settings-1a5b880a.json",
-        "content/.settings/Release/settings-5190454b.json",
-        "content/.settings/Release/settings-590bb27b.json",
-        "content/.settings/Release/settings-82ca306a.json",
-        "content/.settings/Release/settings-9e9290da.json",
-        "content/.settings/Release/settings-a1b2dac1.json",
-        "content/.settings/Release/settings-afad0842.json",
-        "content/README.md",
-        "content/bindings.json",
-        "content/bindings_v2.json",
         "contentFiles/any/any/.objects/-CBe/.data/ObjectSelectionName/.content",
         "contentFiles/any/any/.objects/-CBe/.metadata",
         "contentFiles/any/any/.objects/-CBe/.type",
@@ -10588,6 +10536,7 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.data/ObjectRepositoryTargetData/.images/.design/0QGGe1xxtQEmFVslNakd1Ng",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/2AH1/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/3J2k/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
@@ -10746,6 +10695,42 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.data/ObjectRepositoryTargetData/.images/.design/0Uyc8YmMSOEqnmfVBMno7Yg",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/25IJ/ujLC/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.data/ObjectRepositoryScreenData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.data/ObjectRepositoryScreenData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.data/ObjectRepositoryScreenData/.images/.design/0LEvXRo3wi0iEdhSUp7x28A",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.data/ObjectRepositoryTargetData/.images/.design/0G7m6xciXbUeNYxVzBEdV4g",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/D94j/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.data/ObjectRepositoryTargetData/.images/.design/06F4kHWP1sk67OPxxk9QRCg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/DB6m/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.data/ObjectRepositoryTargetData/.images/.design/0K2hP08vYAUWGxSpPlr82Lw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/T8HL/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.data/ObjectRepositoryTargetData/.images/.design/0IXxfzxjxNkqmPC_L6uQD8Q",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/nkTV/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.data/ObjectRepositoryTargetData/.images/.design/0xF2qk0Zijk6A3lnIsp8mdQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/98lp/rWsJ/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/IHXD/.data/ObjectRepositoryScreenData/.hash",
@@ -11001,6 +10986,48 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/ad-g/t6Mw/.data/ObjectRepositoryTargetData/.images/.design/0pGmEpgyS3kGKeIYn9ljPVg",
         "contentFiles/any/any/.objects/-CBe/nSpP/ad-g/t6Mw/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/ad-g/t6Mw/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.data/ObjectRepositoryScreenData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.data/ObjectRepositoryScreenData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.data/ObjectRepositoryScreenData/.images/.design/04t0mxkcsFUebb_VvVkKORQ",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.data/ObjectRepositoryTargetData/.images/.design/0RcOWIjHa0kmgN7yLz5-gEA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/28qO/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.data/ObjectRepositoryTargetData/.images/.design/0cNYq_9nv6keZO_QOJkiQRg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Gvj_/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.data/ObjectRepositoryTargetData/.images/.design/0tItv4gAcmUC1nFmYLmSINw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/PDDn/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.data/ObjectRepositoryTargetData/.images/.design/0OrljAYFf40CQpmHcSftRvA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/WQk1/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.data/ObjectRepositoryTargetData/.images/.design/0JMxuhIvL9kWjizH1eaXTEw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/Yfs-/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.data/ObjectRepositoryTargetData/.images/.design/0BzxpTEWyAESNu7acqfPqqw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/o4SD/yfht/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/.data/ObjectRepositoryScreenData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/.data/ObjectRepositoryScreenData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/.data/ObjectRepositoryScreenData/.hash",
@@ -11035,6 +11062,24 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.data/ObjectRepositoryTargetData/.images/.design/0JukvsoAaIkyVkJYnBAjPJg",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.metadata",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/7cggt/DFJs/Oc4C/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.data/ObjectRepositoryTargetData/.images/.design/0scbpgOcTj0y5utSFYLr5sA",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.data/ObjectRepositoryTargetData/.images/.design/0dYQZECyVJEq_Tlqks0T2dg",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/.type",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.data/ObjectRepositoryTargetData/.content",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.data/ObjectRepositoryTargetData/.hash",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.data/ObjectRepositoryTargetData/.images/.design/0H2CFbYMlcEy0lA8GJlZVGw",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.metadata",
+        "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/9RVb/n1Y4/TOlK/.type",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.attributes/SearchHash",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.content",
         "contentFiles/any/any/.objects/-CBe/nSpP/rjWU/rIGG/_twL/I5t6y/.data/ObjectRepositoryTargetData/.hash",
@@ -11226,16 +11271,19 @@
         "contentFiles/any/any/.objects/-CBe/nSpP/xI9n/w3Rb/aeGM/.type",
         "contentFiles/any/any/.objects/.metadata",
         "contentFiles/any/any/.objects/.type",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_25360113.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_45485984.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_47888759.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_49991340.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60082571.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_60684095.dll",
-        "lib/net6.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_6585490.dll",
-        "lib_peoplesoft_9.2.library.runtime.1.0.3-alpha.nupkg.sha512",
-        "lib_peoplesoft_9.2.library.runtime.nuspec"
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_19873111.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_26584254.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_27047851.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_28773635.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_42941703.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_46346307.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_48299296.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5079042.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_52250442.dll",
+        "lib/net8.0-windows7.0/LIB_PeopleSoft_9.2_Expressions_5407170.dll",
+        "lib_peoplesoft_9.2.1.0.6.nupkg.sha512",
+        "lib_peoplesoft_9.2.nuspec"
       ]
     },
     "Markdig.Signed/0.21.1": {
@@ -14165,37 +14213,6 @@
         "runtimes/win/lib/net/_._",
         "runtimes/win/lib/netcore50/System.Runtime.Extensions.dll",
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
-      ]
-    },
-    "runtime.win7-x64.runtime.native.System.IO.Compression/4.3.0": {
-      "sha512": "UamDlgSO/nIzc96M+g3wbvAGbAuXjvRYR5Ttm/FVJgt2iva8ouOqSJ0j6eGI7pZDLvD/ZISl9XRZOajE/Xvizg==",
-      "type": "package",
-      "path": "runtime.win7-x64.runtime.native.system.io.compression/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "runtime.win7-x64.runtime.native.system.io.compression.4.3.0.nupkg.sha512",
-        "runtime.win7-x64.runtime.native.system.io.compression.nuspec",
-        "runtimes/win7-x64/native/clrcompression.dll"
-      ]
-    },
-    "runtime.win7.System.Private.Uri/4.3.0": {
-      "sha512": "Q+IBgaPYicSQs2tBlmXqbS25c/JLIthWrgrpMwxKSOobW/OqIMVFruUGfuaz4QABVzV8iKdCAbN7APY7Tclbnw==",
-      "type": "package",
-      "path": "runtime.win7.system.private.uri/4.3.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "ref/netstandard/_._",
-        "runtime.win7.system.private.uri.4.3.0.nupkg.sha512",
-        "runtime.win7.system.private.uri.nuspec",
-        "runtimes/aot/lib/netcore50/System.Private.Uri.dll",
-        "runtimes/win/lib/netcore50/System.Private.Uri.dll",
-        "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
     "SharpZipLib/1.3.3": {
@@ -21204,9 +21221,9 @@
   },
   "projectFileDependencyGroups": {
     "": [],
-    "net6.0-windows7.0": [
+    "net8.0-windows7.0": [
       "LIB_GraphAPI_1.0 >= 1.0.1-alpha.4 <= 1.0.1-alpha.4",
-      "LIB_PeopleSoft_9.2 >= 1.0.3-alpha <= 1.0.3-alpha",
+      "LIB_PeopleSoft_9.2 >= 1.0.6 <= 1.0.6",
       "UiPath.Excel.Activities >= 2.20.2 <= 2.20.2",
       "UiPath.System.Activities >= 23.4.5 <= 23.4.5",
       "UiPath.Testing.Activities >= 23.4.1 <= 23.4.1",
@@ -21214,18 +21231,18 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\55648C\\.nuget\\packages\\": {}
+    "C:\\Users\\svc_prod.robot01\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "P001_090_PayCycleQueries_Dispatcher",
       "projectName": "P001_090_PayCycleQueries_Dispatcher",
-      "projectPath": "C:\\Users\\55648C\\Documents\\SOK_GIT\\P0001_090_PayCyleQueries_Dispatcher\\.local",
-      "packagesPath": "C:\\Users\\55648C\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55648C\\Documents\\SOK_GIT\\P0001_090_PayCyleQueries_Dispatcher\\.local"
+      "projectPath": "C:\\Users\\svc_prod.robot01\\Documents\\UiPath\\P0001_090_PayCyleQueries_Dispatcher\\.local",
+      "packagesPath": "C:\\Users\\svc_prod.robot01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\svc_prod.robot01\\Documents\\UiPath\\P0001_090_PayCyleQueries_Dispatcher\\.local"
     },
     "frameworks": {
-      "net6.0-windows7.0": {
+      "net8.0-windows7.0": {
         "dependencies": {
           "LIB_GraphAPI_1.0": {
             "include": "Runtime",
@@ -21235,7 +21252,7 @@
           "LIB_PeopleSoft_9.2": {
             "include": "Runtime",
             "target": "Package",
-            "version": "[1.0.3-alpha, 1.0.3-alpha]"
+            "version": "[1.0.6, 1.0.6]"
           },
           "UiPath.Excel.Activities": {
             "include": "Runtime",
@@ -21258,11 +21275,11 @@
             "version": "[23.4.8, 23.4.8]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
-      "win10-x64": {
+      "win-x64": {
         "#import": []
       }
     }
